@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./stylesheets/app.css";
 
 import Landing from "./components/container/Landing";
 

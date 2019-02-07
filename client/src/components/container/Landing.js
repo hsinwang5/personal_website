@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Hero from "../layout/Hero";
+import Hero from "../pages/Hero";
 
 class Landing extends Component {
   render() {

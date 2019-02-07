@@ -1,0 +1,15 @@
+//animations for modules/hero.scss
+.animation__grow-triangle {
+  animation: growTriangle 1.5s;
+  transform-origin: 50% 20%;
+}
+
+@keyframes growTriangle {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

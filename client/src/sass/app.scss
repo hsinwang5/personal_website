@@ -2,6 +2,11 @@ $tablet: 48rem; //768x1024 portrait ipads
 $laptop: 80rem; //1280x720 standard HD
 $highdef: 120rem; //1920x1080 high def +
 
+// font-family: 'Questrial', sans-serif;
+// font-family: 'Aladin', cursive;
+// font-family: 'Sriracha', cursive;
+// font-family: 'Alegreya Sans SC', sans-serif;
+
 @mixin mobile-cutoff {
   @media only screen and (min-width: $tablet) {
     @content;
@@ -34,7 +39,6 @@ $highdef: 120rem; //1920x1080 high def +
 
 html {
   box-sizing: border-box;
-  font-family: "Bubblegum Sans", cursive;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
@@ -53,6 +57,13 @@ h2,
 h3,
 h4,
 h5 {
+  text-align: center;
+}
+
+//---------------------------------------------------------------------------
+
+.boldtext {
+  font-family: "Alegreya Sans SC", sans-serif;
   text-align: center;
 }
 

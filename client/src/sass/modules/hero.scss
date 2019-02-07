@@ -4,45 +4,86 @@
 .hero-screen {
   height: 100vh;
   width: 100vw;
-  background: gray;
+  background: #f0f0f0;
   position: absolute;
   top: 0;
   left: 0;
 }
 .intro {
   width: 375px;
-  height: 664px;
-  border: 1px solid red;
+  height: 600px;
   position: relative;
   left: 0;
   right: 0;
   margin: auto;
   top: 50%;
-  margin-top: -332px;
+  margin-top: -300px;
 }
-.intro__triangle1 {
+.triangle-box {
+  opacity: 0.5;
+}
+.intro__triangle {
   position: absolute;
-  top: 14%;
   left: 0;
   right: 0;
   margin: auto;
   width: 0;
   height: 0;
-  border-top: 45px solid red;
+  border-top: 45px solid #5959cf;
   border-left: 45px solid transparent;
   border-right: 45px solid transparent;
   border-bottom: 45px solid transparent;
 }
-.intro__triangle2 {
+.intro__nameplate {
   position: absolute;
-  top: 29%;
+  top: 41%;
   left: 0;
   right: 0;
   margin: auto;
-  width: 0;
-  height: 0;
-  border-top: 45px solid red;
-  border-left: 45px solid transparent;
-  border-right: 45px solid transparent;
-  border-bottom: 45px solid transparent;
+  width: 335px;
+  height: 155px;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  font-family: "Sriracha", cursive;
+  font-size: 4.1rem;
 }
+.intro__nameplate--first {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 155px;
+  background: #5959cf;
+}
+.intro__nameplate--last {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 155px;
+  background: #a7a7fc;
+}
+.intro__subtext {
+  position: relative;
+  top: 70%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 325px;
+  height: 100px;
+  border: 1px solid red;
+  display: flex;
+}
+.intro__subtext img {
+  width: 50%;
+  height: 100%;
+}
+.boldtext--intro {
+  position: absolute;
+  left: 35%;
+  width: 50%;
+  height: 100%;
+  line-height: 100px;
+  font-size: 4rem;
+}
+
+@import "animations.scss";

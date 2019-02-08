@@ -34,7 +34,8 @@ h5 {
   background: #fffffe;
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  transition: transform 1s linear; }
 
 .intro {
   width: 100vw;

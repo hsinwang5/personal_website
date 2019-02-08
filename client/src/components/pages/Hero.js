@@ -10,8 +10,11 @@ class Hero extends Component {
     super(props);
     this.state = {
       scaleTriangle1: 0,
-      scaleTriangle2: 0
+      scaleTriangle2: 0,
+      scrollHeroPage: 0
     };
+
+    this.enterWebsite = this.enterWebsite.bind(this);
   }
 
   componentWillMount() {
@@ -29,13 +32,26 @@ class Hero extends Component {
     }, 1500);
   }
 
+  enterWebsite() {
+    console.log("click success!");
+    this.setState({
+      scrollHeroPage: -110
+    });
+  }
+
   render() {
+    const style = {
+      transform: `translateY(${this.state.scrollHeroPage}vh)`
+    };
     return (
-      <div className="hero-screen">
+      <div className="hero-screen" style={style}>
         <div className="intro">
           <Triangle top="8%" delay=".5s" scale={this.state.scaleTriangle1} />
           <Triangle top="20%" delay="1.5s" scale={this.state.scaleTriangle2} />
-          <Nameplate />
+          <Nameplate
+            enterWebsiteClick={this.enterWebsite}
+            top={this.state.scrollHeroPage}
+          />
           <EnterSubtext />
           <Avatar />
         </div>

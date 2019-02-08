@@ -31,22 +31,19 @@ h5 {
 .hero-screen {
   height: 100vh;
   width: 100vw;
-  background: #f0f0f0;
   background: #fffffe;
   position: absolute;
   top: 0;
   left: 0; }
 
 .intro {
-  width: 375px;
+  width: 100vw;
   height: 100vh;
-  max-height: 600px;
+  max-height: 700px;
   position: relative;
   left: 0;
   right: 0;
-  margin: auto;
-  top: 50%;
-  margin-top: -300px; }
+  margin: auto; }
 
 .intro__triangle {
   position: absolute;
@@ -55,16 +52,16 @@ h5 {
   margin: auto;
   width: 0;
   height: 0;
-  border-top: 45px solid #5959cf;
-  border-left: 45px solid transparent;
-  border-right: 45px solid transparent;
-  border-bottom: 45px solid transparent;
+  border-top: 55px solid #5959cf;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+  border-bottom: 55px solid transparent;
   transform-origin: 50% 25%;
   transition: transform 0.3s linear; }
 
 .intro__nameplate {
   position: absolute;
-  top: 41%;
+  top: 31%;
   left: 0;
   right: 0;
   margin: auto;
@@ -74,7 +71,8 @@ h5 {
   cursor: pointer;
   display: flex;
   font-family: "Sriracha", cursive;
-  font-size: 4.1rem; }
+  font-size: 4.1rem;
+  transform: scale(0); }
 
 .intro__nameplate--first {
   width: 50%;
@@ -92,13 +90,16 @@ h5 {
 
 .intro__subtext {
   position: relative;
-  top: 70%;
+  top: 51%;
   left: 0;
   right: 0;
   margin: auto;
   width: 325px;
   height: 100px;
-  display: flex; }
+  display: flex;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: 0% 50%; }
 
 .intro__subtext img {
   width: 50%;
@@ -114,15 +115,25 @@ h5 {
 
 .avatar-img {
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   left: 0;
   right: 0;
   margin: auto;
-  width: 200px;
-  height: 200px; }
+  width: 180px;
+  height: 180px; }
 
 .animation__grow-triangle {
   animation: growTriangle 1s; }
+
+.animation__growNameplate {
+  animation: growNameplate 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s; }
+
+.animation__intro-subtext {
+  animation: growSubtext 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s; }
 
 @keyframes growTriangle {
   0% {
@@ -137,3 +148,28 @@ h5 {
   100% {
     transform: scale(1.5);
     opacity: 0; } }
+
+@keyframes growNameplate {
+  0% {
+    transform: scale(0); }
+  40% {
+    transform: scale(1.2); }
+  50% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes growSubtext {
+  0% {
+    transform: scaleX(0); }
+  40% {
+    transform: scaleX(1); }
+  60% {
+    transform: rotate(7deg);
+    transform-origin: 50% 50%; }
+  80% {
+    transform: rotate(-7deg);
+    transform-origin: 50% 50%; }
+  100% {
+    transform: rotate(0);
+    transform-origin: 50% 50%; } }

@@ -1,22 +1,21 @@
 .hero-screen {
   height: 100vh;
   width: 100vw;
-  background: #f0f0f0;
-  background: #fffffe;
+  background: $backgroundDefaultColor;
   position: absolute;
   top: 0;
   left: 0;
 }
 .intro {
-  width: 375px;
+  width: 100vw;
   height: 100vh;
-  max-height: 600px;
+  max-height: 700px;
   position: relative;
   left: 0;
   right: 0;
   margin: auto;
-  top: 50%;
-  margin-top: -300px;
+  // top: -50%;
+  // margin-top: -300px;
 }
 .intro__triangle {
   position: absolute;
@@ -25,16 +24,16 @@
   margin: auto;
   width: 0;
   height: 0;
-  border-top: 45px solid #5959cf;
-  border-left: 45px solid transparent;
-  border-right: 45px solid transparent;
-  border-bottom: 45px solid transparent;
+  border-top: 55px solid #5959cf;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+  border-bottom: 55px solid transparent;
   transform-origin: 50% 25%;
   transition: transform 0.3s linear;
 }
 .intro__nameplate {
   position: absolute;
-  top: 41%;
+  top: 31%;
   left: 0;
   right: 0;
   margin: auto;
@@ -45,30 +44,34 @@
   display: flex;
   font-family: "Sriracha", cursive;
   font-size: 4.1rem;
+  transform: scale(0);
 }
 .intro__nameplate--first {
   width: 50%;
   height: 100%;
   text-align: center;
   line-height: 155px;
-  background: #5959cf;
+  background: $firstNameplateColor;
 }
 .intro__nameplate--last {
   width: 50%;
   height: 100%;
   text-align: center;
   line-height: 155px;
-  background: #a7a7fc;
+  background: $lastNameplateColor;
 }
 .intro__subtext {
   position: relative;
-  top: 70%;
+  top: 51%;
   left: 0;
   right: 0;
   margin: auto;
   width: 325px;
   height: 100px;
   display: flex;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
 }
 .intro__subtext img {
   width: 50%;
@@ -84,12 +87,12 @@
 }
 .avatar-img {
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   left: 0;
   right: 0;
   margin: auto;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 
 @import "animations.scss";

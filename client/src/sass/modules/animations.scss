@@ -2,6 +2,16 @@
 .animation__grow-triangle {
   animation: growTriangle 1s;
 }
+.animation__growNameplate {
+  animation: growNameplate 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+.animation__intro-subtext {
+  animation: growSubtext 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
 
 @keyframes growTriangle {
   0% {
@@ -20,5 +30,39 @@
   100% {
     transform: scale(1.5);
     opacity: 0;
+  }
+}
+@keyframes growNameplate {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes growSubtext {
+  0% {
+    transform: scaleX(0);
+  }
+  40% {
+    transform: scaleX(1);
+  }
+  60% {
+    transform: rotate(7deg);
+    transform-origin: 50% 50%;
+  }
+  80% {
+    transform: rotate(-7deg);
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: rotate(0);
+    transform-origin: 50% 50%;
   }
 }

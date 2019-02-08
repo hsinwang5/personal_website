@@ -28,29 +28,25 @@ h5 {
   font-family: "Alegreya Sans SC", sans-serif;
   text-align: center; }
 
-.App {
-  background: green; }
-
 .hero-screen {
   height: 100vh;
   width: 100vw;
   background: #f0f0f0;
+  background: #fffffe;
   position: absolute;
   top: 0;
   left: 0; }
 
 .intro {
   width: 375px;
-  height: 600px;
+  height: 100vh;
+  max-height: 600px;
   position: relative;
   left: 0;
   right: 0;
   margin: auto;
   top: 50%;
   margin-top: -300px; }
-
-.triangle-box {
-  opacity: 0.5; }
 
 .intro__triangle {
   position: absolute;
@@ -62,7 +58,9 @@ h5 {
   border-top: 45px solid #5959cf;
   border-left: 45px solid transparent;
   border-right: 45px solid transparent;
-  border-bottom: 45px solid transparent; }
+  border-bottom: 45px solid transparent;
+  transform-origin: 50% 25%;
+  transition: transform 0.3s linear; }
 
 .intro__nameplate {
   position: absolute;
@@ -100,7 +98,6 @@ h5 {
   margin: auto;
   width: 325px;
   height: 100px;
-  border: 1px solid red;
   display: flex; }
 
 .intro__subtext img {
@@ -115,13 +112,28 @@ h5 {
   line-height: 100px;
   font-size: 4rem; }
 
+.avatar-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 200px;
+  height: 200px; }
+
 .animation__grow-triangle {
-  animation: growTriangle 1.5s;
-  transform-origin: 50% 20%; }
+  animation: growTriangle 1s; }
 
 @keyframes growTriangle {
   0% {
-    transform: scale(1); }
+    transform: scale(0); }
+  20% {
+    transform: scale(1.2); }
+  30% {
+    transform: scale(1.3);
+    opacity: 1; }
+  60% {
+    transform: scale(1.4); }
   100% {
     transform: scale(1.5);
     opacity: 0; } }

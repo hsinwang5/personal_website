@@ -2,17 +2,16 @@ import React from "react";
 
 function Triangle(props) {
   const style = {
-    top: props.top
+    top: props.top,
+    transform: `scale(${props.scale})`
   };
   const animationStyle = {
     top: props.top,
-    animationDelay: props.delay
-  };
-  const triangleBoxStyle = {
-    opacity: props.opacity
+    animationDelay: props.delay,
+    transform: `scale(${props.scale})`
   };
   return (
-    <div className="triangle-box" style={triangleBoxStyle}>
+    <div className="triangle-box">
       <div className="intro__triangle" style={style} />
       {animationStyle.animationDelay ? (
         <div

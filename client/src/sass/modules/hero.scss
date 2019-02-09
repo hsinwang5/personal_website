@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   transition: transform 1s linear;
+  z-index: 1000;
 }
 .intro {
   width: 100vw;
@@ -96,4 +97,4 @@
   height: 180px;
 }
 
-@import "animations.scss";
+@import "animations/hero_animations.scss";

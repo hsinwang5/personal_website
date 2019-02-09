@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import Triangle from "../layout/Triangle";
-import Nameplate from "../layout/Nameplate";
-import EnterSubtext from "../layout/EnterSubtext";
-import Avatar from "../layout/Avatar";
+import Triangle from "../heroLayout/Triangle";
+import Nameplate from "../heroLayout/Nameplate";
+import EnterSubtext from "../heroLayout/EnterSubtext";
+import Avatar from "../heroLayout/Avatar";
 
 class Hero extends Component {
   constructor(props) {

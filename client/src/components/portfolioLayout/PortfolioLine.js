@@ -5,7 +5,8 @@ class PortfolioLine extends Component {
     super(props);
 
     this.state = {
-      height: 1
+      height: 1,
+      top: 0
     };
 
     this.myRef = React.createRef();
@@ -13,33 +14,46 @@ class PortfolioLine extends Component {
 
   componentDidMount() {
     const nodeHeight = this.myRef.current.offsetWidth;
-    this.setState({
-      height: nodeHeight * 2.115
-    });
-    console.log(nodeHeight);
+    console.log("width: " + nodeHeight);
+    this.setState(
+      {
+        height: Math.round(nodeHeight * 2.115)
+      },
+      () => {
+        const newTop =
+          this.state.height * this.props.place - this.props.place * 5;
+        this.setState({
+          top: newTop
+        });
+      }
+    );
   }
 
   render() {
     let Style;
+    //calculate where to place the portfolio circle along vertical axis
     //Set direction of circle + other properties in portfolio page
     if (this.props.direction === "left") {
       Style = {
-        top: `${this.props.top}px`,
+        top: this.state.top,
         borderTopLeftRadius: "1000px",
         borderBottomLeftRadius: "1000px",
         borderRight: "0",
-        height: `${this.state.height}px`
+        height: `${this.state.height}px`,
+        left: `-16%`,
+        width: `${this.props.width}px`
       };
     } else {
       Style = {
-        top: `${this.props.top}px`,
+        top: this.state.top,
         borderTopRightRadius: "1000px",
         borderBottomRightRadius: "1000px",
         borderLeft: "0",
-        height: `${this.state.height}px`
+        height: `${this.state.height}px`,
+        right: `-16%`,
+        width: `${this.props.width}px`
       };
     }
-    console.log(this.state.height);
     return (
       <div
         className="portfolio-line__circle portfolio-line__circle--circle1"

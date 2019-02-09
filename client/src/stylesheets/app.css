@@ -187,28 +187,23 @@ h5 {
   height: 100%;
   width: 30%;
   margin: auto;
-  top: 5px;
-  border: 1px solid red; }
+  top: 5px; }
 
 .portfolio-line__circle {
-  height: 165px;
-  width: 70%; }
+  height: 165px; }
 
 .portfolio-line__circle--circle1 {
   position: absolute;
   top: 0;
-  left: -16%;
   border: 5px solid #007bff; }
 
 .portfolio-line__circle--circle2 {
   position: absolute;
-  top: 160px;
   right: -16%;
   border: 5px solid #007bff; }
 
 .portfolio-line__circle--circle3 {
   position: absolute;
-  top: 320px;
   left: -16%;
   border: 5px solid #007bff; }
 

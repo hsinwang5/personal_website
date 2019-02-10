@@ -180,7 +180,8 @@ h5 {
   width: 100vw;
   height: 100vh;
   position: relative;
-  z-index: 100; }
+  z-index: 100;
+  top: 500px; }
 
 .portfolio-line {
   position: relative;
@@ -195,26 +196,4 @@ h5 {
 .portfolio-line__circle--circle1 {
   position: absolute;
   top: 0;
-  border: 5px solid #007bff; }
-
-.portfolio-line__circle--circle2 {
-  position: absolute;
-  right: -16%;
-  border: 5px solid #007bff; }
-
-.portfolio-line__circle--circle3 {
-  position: absolute;
-  left: -16%;
-  border: 5px solid #007bff; }
-
-.portfolio-line__circle--circle4 {
-  position: absolute;
-  top: 480px;
-  right: -16%;
-  border: 5px solid #007bff; }
-
-.portfolio-line__circle--circle5 {
-  position: absolute;
-  top: 640px;
-  left: -16%;
   border: 5px solid #007bff; }

@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Waypoint from "react-waypoint";
+
+import PortfolioThumbnail from "./PortfolioThumbnail";
 
 class PortfolioLine extends Component {
   constructor(props) {
@@ -12,6 +15,7 @@ class PortfolioLine extends Component {
 
     this.myRef = React.createRef();
     this.calculateSize = this.calculateSize.bind(this);
+    this.testFunc = this.testFunc.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +24,8 @@ class PortfolioLine extends Component {
 
   //dynamically calculates the size of portfolio circles, call on render and window resize
   calculateSize() {
+    //borderSize is the size of the circle's border plus 1 pixel
+    const borderSize = 5;
     const width = Math.round(window.innerWidth * 0.3 * 0.69);
     this.setState(
       {
@@ -34,7 +40,8 @@ class PortfolioLine extends Component {
           () => {
             //calculate the top offset, factoring in the size of the circle's border
             const top =
-              this.state.height * this.props.place - this.props.place * 5;
+              this.state.height * this.props.place -
+              this.props.place * borderSize;
             this.setState({
               top
             });
@@ -42,6 +49,10 @@ class PortfolioLine extends Component {
         );
       }
     );
+  }
+
+  testFunc() {
+    console.log("waypoint entered");
   }
 
   render() {
@@ -54,7 +65,7 @@ class PortfolioLine extends Component {
         top: this.state.top,
         borderTopLeftRadius: "1000px",
         borderBottomLeftRadius: "1000px",
-        borderRight: "0",
+        borderRight: "5px",
         height: `${this.state.height}px`,
         left: `-16%`,
         width: `${this.state.width}px`
@@ -64,18 +75,23 @@ class PortfolioLine extends Component {
         top: this.state.top,
         borderTopRightRadius: "1000px",
         borderBottomRightRadius: "1000px",
-        borderLeft: "0",
+        borderLeft: "5px",
         height: `${this.state.height}px`,
         right: `-16%`,
         width: `${this.state.width}px`
       };
     }
     return (
-      <div
-        className="portfolio-line__circle portfolio-line__circle--circle1"
-        style={Style}
-        ref={this.myRef}
-      />
+      <div className="portfolio-container">
+        <div
+          className="portfolio-line__circle portfolio-line__circle--circle1"
+          style={Style}
+          ref={this.myRef}
+        >
+          <Waypoint onEnter={this.testFunc} topOffset={"-50%"} />
+        </div>
+        <PortfolioThumbnail />
+      </div>
     );
   }
 }

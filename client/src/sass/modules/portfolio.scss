@@ -3,6 +3,7 @@
   height: 100vh;
   position: relative;
   z-index: 100;
+  top: 500px;
 }
 .portfolio-line {
   position: relative;
@@ -13,50 +14,9 @@
 }
 .portfolio-line__circle {
   height: 165px;
-  // width: 70%;
 }
 .portfolio-line__circle--circle1 {
   position: absolute;
   top: 0;
-  // left: -16%;
-  // border-top-left-radius: 110px;
-  // border-bottom-left-radius: 110px;
   border: 5px solid #007bff;
-  // border-right: 0;
-}
-.portfolio-line__circle--circle2 {
-  position: absolute;
-  // top: 160px;
-  right: -16%;
-  // border-top-right-radius: 110px;
-  // border-bottom-right-radius: 110px;
-  border: 5px solid #007bff;
-  // border-left: 0;
-}
-.portfolio-line__circle--circle3 {
-  position: absolute;
-  // top: 320px;
-  left: -16%;
-  // border-top-left-radius: 110px;
-  // border-bottom-left-radius: 110px;
-  border: 5px solid #007bff;
-  // border-right: 0;
-}
-.portfolio-line__circle--circle4 {
-  position: absolute;
-  top: 480px;
-  right: -16%;
-  // border-top-right-radius: 110px;
-  // border-bottom-right-radius: 110px;
-  border: 5px solid #007bff;
-  // border-left: 0;
-}
-.portfolio-line__circle--circle5 {
-  position: absolute;
-  top: 640px;
-  left: -16%;
-  // border-top-left-radius: 110px;
-  // border-bottom-left-radius: 110px;
-  border: 5px solid #007bff;
-  // border-right: 0;
 }

@@ -20,15 +20,15 @@ class Portfolio extends Component {
 
   render() {
     //calculates width of circle, accounting for CSS rounding errors when using %
-    const width = Math.round(window.innerWidth * 0.3 * 0.69);
+    // const width = Math.round(window.innerWidth * 0.3 * 0.69);
     return (
       <div className="portfolio-page">
         <div className="portfolio-line" ref={this.myRef}>
-          <PortfolioLine direction="left" place={0} width={width} />
-          <PortfolioLine direction="right" place={1} width={width} />
-          <PortfolioLine direction="left" place={2} width={width} />
-          <PortfolioLine direction="right" place={3} width={width} />
-          <PortfolioLine direction="left" place={4} width={width} />
+          <PortfolioLine direction="left" place={0} />
+          <PortfolioLine direction="right" place={1} />
+          <PortfolioLine direction="left" place={2} />
+          <PortfolioLine direction="right" place={3} />
+          <PortfolioLine direction="left" place={4} />
         </div>
         <div className="portfolio">
           <div className="portfolio__item portfolio__item--item1" />

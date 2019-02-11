@@ -37,6 +37,8 @@ class Hero extends Component {
     this.setState({
       scrollHeroPage: -110
     });
+    //opens up scrolling once user enters website, sends up to Landing.js
+    this.props.allowScroll();
   }
 
   render() {

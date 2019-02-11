@@ -11,7 +11,8 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  background: #e6e1e5; }
+  background: #696868;
+  background: #616161; }
 
 a {
   text-decoration: none;
@@ -28,6 +29,10 @@ h5 {
   font-family: "Alegreya Sans SC", sans-serif;
   text-align: center; }
 
+.main {
+  width: 100vw;
+  height: 100vh; }
+
 .hero-screen {
   height: 100vh;
   width: 100vw;
@@ -36,7 +41,8 @@ h5 {
   top: 0;
   left: 0;
   transition: transform 1s linear;
-  z-index: 1000; }
+  z-index: 1000;
+  overflow: hidden; }
 
 .intro {
   width: 100vw;
@@ -178,22 +184,51 @@ h5 {
 
 .portfolio-page {
   width: 100vw;
-  height: 100vh;
-  position: relative;
   z-index: 100;
-  top: 500px; }
+  margin: auto; }
 
 .portfolio-line {
   position: relative;
   height: 100%;
   width: 30%;
   margin: auto;
-  top: 5px; }
-
-.portfolio-line__circle {
-  height: 165px; }
+  top: 5px;
+  max-width: 333px; }
 
 .portfolio-line__circle--circle1 {
   position: absolute;
   top: 0;
-  border: 5px solid #007bff; }
+  border: 5px solid #007bff;
+  border: 5px solid #70ba07; }
+
+.portfolio-item {
+  top: 10%;
+  width: 270%;
+  height: 80%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2e7501;
+  transition: transform 0.5s; }
+  .portfolio-item:hover {
+    transform: scale(1.1); }
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%; }
+
+.introduction {
+  width: 100vw;
+  height: 100vh; }
+
+.intro__nameplate--second {
+  position: relative;
+  width: 100px;
+  height: 500px;
+  border: 1px solid black; }
+
+.introduction__char {
+  opacity: 0; }
+
+.introduction__char--transition {
+  opacity: 1;
+  transition: opacity 1s; }

@@ -1,0 +1,18 @@
+.introduction {
+  width: 100vw;
+  height: 100vh;
+}
+.intro__nameplate--second {
+  position: relative;
+  width: 100px;
+  height: 500px;
+  border: 1px solid black;
+}
+.introduction__char {
+  opacity: 0;
+}
+.introduction__char--transition {
+  opacity: 1;
+  transition: opacity 1s;
+  // transition-delay: 2s;
+}

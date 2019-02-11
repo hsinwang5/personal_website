@@ -49,7 +49,8 @@ html {
 }
 
 body {
-  background: #e6e1e5;
+  background: #696868;
+  background: #616161;
 }
 
 a {
@@ -74,3 +75,4 @@ h5 {
 
 @import "modules/hero.scss";
 @import "modules/portfolio.scss";
+@import "modules/introduction.scss";

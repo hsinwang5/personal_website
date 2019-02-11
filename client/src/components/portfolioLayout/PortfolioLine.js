@@ -26,13 +26,16 @@ class PortfolioLine extends Component {
   calculateSize() {
     //borderSize is the size of the circle's border plus 1 pixel
     const borderSize = 5;
-    const width = Math.round(window.innerWidth * 0.3 * 0.69);
+    let width = Math.round(window.innerWidth * 0.3 * 0.69);
+    width = width > 225 ? 225 : width;
+    console.log(width);
     this.setState(
       {
         width
       },
       () => {
         const height = Math.round(this.myRef.current.offsetWidth * 2.115);
+        console.log(height);
         this.setState(
           {
             height
@@ -56,7 +59,6 @@ class PortfolioLine extends Component {
   }
 
   render() {
-    console.log(this.state.width);
     let Style;
     //calculate where to place the portfolio circle along vertical axis
     //Set direction of circle + other properties in portfolio page
@@ -83,14 +85,18 @@ class PortfolioLine extends Component {
     }
     return (
       <div className="portfolio-container">
+        <div className="test" />
         <div
           className="portfolio-line__circle portfolio-line__circle--circle1"
           style={Style}
           ref={this.myRef}
         >
           <Waypoint onEnter={this.testFunc} topOffset={"-50%"} />
+          <PortfolioThumbnail
+            picture={this.props.picture}
+            direction={this.props.direction}
+          />
         </div>
-        <PortfolioThumbnail />
       </div>
     );
   }

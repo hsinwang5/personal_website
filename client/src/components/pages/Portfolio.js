@@ -9,26 +9,50 @@ class Portfolio extends Component {
     this.myRef = React.createRef();
   }
 
-  // componentDidMount() {
-  //   //This sets pixel perfect width of circles - necessary due to rounding errors in CSS
-  //   const nodeHeight = Math.round(this.myRef.current.offsetWidth * 0.69);
-  //   this.setState({
-  //     width: nodeHeight
-  //   });
-  //   console.log(window.innerWidth);
-  // }
-
   render() {
-    //calculates width of circle, accounting for CSS rounding errors when using %
-    // const width = Math.round(window.innerWidth * 0.3 * 0.69);
+    //Calculates height of entire portfolio for element stacking purposes
+    //since portfolio makes use of absolute and relative positioning
+    //height is height of all 6 portfolio items times 6
+    let width = Math.round(window.innerWidth * 0.3 * 0.69);
+    width = width > 225 ? 225 : width;
+    const height = Math.round(width * 2.115);
+    const Style = {
+      height: height * 6
+    };
+
     return (
-      <div className="portfolio-page">
+      <div className="portfolio-page" style={Style}>
         <div className="portfolio-line" ref={this.myRef}>
-          <PortfolioLine direction="left" place={0} />
-          <PortfolioLine direction="right" place={1} />
-          <PortfolioLine direction="left" place={2} />
-          <PortfolioLine direction="right" place={3} />
-          <PortfolioLine direction="left" place={4} />
+          <PortfolioLine
+            picture="images/hibachi.png"
+            direction="left"
+            place={0}
+          />
+          <PortfolioLine
+            picture="images/color_picker_game.png"
+            direction="right"
+            place={1}
+          />
+          <PortfolioLine
+            picture="images/jade_garden.png"
+            direction="left"
+            place={2}
+          />
+          <PortfolioLine
+            picture="images/simon.png"
+            direction="right"
+            place={3}
+          />
+          <PortfolioLine
+            picture="images/developer_network.png"
+            direction="left"
+            place={4}
+          />
+          <PortfolioLine
+            picture="images/camp.png"
+            direction="right"
+            place={5}
+          />
         </div>
         <div className="portfolio">
           <div className="portfolio__item portfolio__item--item1" />

@@ -9,9 +9,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 1s linear;
+  transition: transform 1s cubic-bezier(0.4, 0.02, 0.88, 0.04);
   z-index: 1000;
-  overflow: hidden;
 }
 .intro {
   width: 100vw;
@@ -31,7 +30,7 @@
   margin: auto;
   width: 0;
   height: 0;
-  border-top: 55px solid #5959cf;
+  border-top: 55px solid #70ba07;
   border-left: 55px solid transparent;
   border-right: 55px solid transparent;
   border-bottom: 55px solid transparent;
@@ -52,6 +51,8 @@
   font-family: "Sriracha", cursive;
   font-size: 4.1rem;
   transform: scale(0);
+  box-shadow: 0 2px 3px 2px #222220;
+  z-index: 100;
 }
 .intro__nameplate--first {
   width: 50%;
@@ -79,6 +80,7 @@
   pointer-events: none;
   transform: scaleX(0);
   transform-origin: 0% 50%;
+  z-index: 101;
 }
 .intro__subtext img {
   width: 50%;
@@ -100,6 +102,7 @@
   margin: auto;
   width: 180px;
   height: 180px;
+  box-shadow: 0 2px 3px 1px #474747;
 }
 
 @import "animations/hero_animations.scss";

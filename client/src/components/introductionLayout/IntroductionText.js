@@ -12,7 +12,7 @@ class IntroductionText extends Component {
     const spans = strArray.map((char, index) => (
       <span
         key={index}
-        style={{ transitionDelay: `${index * 0.05 + 2}s` }}
+        style={{ transitionDelay: `${index * 0.02 + this.props.delay}s` }}
         className={classnames("introduction__char", {
           "introduction__char--transition": this.props.isClicked
         })}
@@ -20,8 +20,14 @@ class IntroductionText extends Component {
         {char}
       </span>
     ));
-    console.log(this.props.isClicked);
-    return <div className="introduction__text">{spans}</div>;
+    const Style = {
+      paddingTop: `${this.props.margin}px`
+    };
+    return (
+      <div className="introduction__text" style={Style}>
+        {spans}
+      </div>
+    );
   }
 }
 

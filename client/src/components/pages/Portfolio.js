@@ -6,7 +6,11 @@ class Portfolio extends Component {
   constructor(props) {
     super(props);
 
-    this.myRef = React.createRef();
+    this.testFunc = this.testFunc.bind(this);
+  }
+
+  testFunc() {
+    console.log("waypoint entered");
   }
 
   render() {
@@ -22,7 +26,7 @@ class Portfolio extends Component {
 
     return (
       <div className="portfolio-page" style={Style}>
-        <div className="portfolio-line" ref={this.myRef}>
+        <div className="portfolio-line">
           <PortfolioLine
             picture="images/hibachi.png"
             direction="left"

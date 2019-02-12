@@ -22,6 +22,15 @@ class Landing extends Component {
     });
   }
 
+  handleScroll() {
+    console.log(window.pageYOffset);
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll.bind(this));
+    console.log("mounted");
+  }
+
   render() {
     const Style = {
       overflow: this.state.overflow

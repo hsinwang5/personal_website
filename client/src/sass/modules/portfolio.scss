@@ -3,7 +3,6 @@
   // position: relative;
   z-index: 100;
   margin: auto;
-  // top: 500px;
 }
 .portfolio-line {
   position: relative;
@@ -14,9 +13,6 @@
   max-width: 333px;
 }
 .portfolio-line__circle {
-  // max-width: 250px;
-}
-.portfolio-line__circle--circle1 {
   position: absolute;
   top: 0;
   border: 5px solid #007bff;
@@ -27,7 +23,6 @@
   width: 270%;
   height: 80%;
   position: relative;
-  overflow: hidden;
   border: 1px solid #2e7501;
   transition: transform 0.5s;
   &:hover {

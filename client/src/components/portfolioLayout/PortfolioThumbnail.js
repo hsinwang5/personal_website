@@ -5,12 +5,12 @@ function PortfolioThumbnail(props) {
   if (props.direction === "left") {
     Style = {
       left: `60%`,
-      boxShadow: `2px 2px 2px 3px #474747`
+      boxShadow: `2px 2px 2px 3px #333330`
     };
   } else {
     Style = {
       right: `230%`,
-      boxShadow: `-2px 2px 2px 3px #474747`
+      boxShadow: `-2px 2px 2px 3px #333330`
     };
   }
   return (

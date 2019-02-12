@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Waypoint from "react-waypoint";
 
 import PortfolioThumbnail from "./PortfolioThumbnail";
+import InView from "../waypoint/InView";
 
 class PortfolioLine extends Component {
   constructor(props) {
@@ -28,14 +29,12 @@ class PortfolioLine extends Component {
     const borderSize = 5;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
     width = width > 225 ? 225 : width;
-    console.log(width);
     this.setState(
       {
         width
       },
       () => {
         const height = Math.round(this.myRef.current.offsetWidth * 2.115);
-        console.log(height);
         this.setState(
           {
             height
@@ -85,13 +84,7 @@ class PortfolioLine extends Component {
     }
     return (
       <div className="portfolio-container">
-        <div className="test" />
-        <div
-          className="portfolio-line__circle portfolio-line__circle--circle1"
-          style={Style}
-          ref={this.myRef}
-        >
-          <Waypoint onEnter={this.testFunc} topOffset={"-50%"} />
+        <div className="portfolio-line__circle" style={Style} ref={this.myRef}>
           <PortfolioThumbnail
             picture={this.props.picture}
             direction={this.props.direction}

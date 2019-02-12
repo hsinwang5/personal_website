@@ -12,7 +12,11 @@ gulp.task("sass", function() {
 //watch scss files
 gulp.task("watch", function() {
   gulp.watch(
-    ["src/sass/*.scss", "src/sass/modules/*.scss"],
+    [
+      "src/sass/*.scss",
+      "src/sass/modules/*.scss",
+      "src/sass/modules/animations/*.scss"
+    ],
     gulp.series("sass")
   );
 });

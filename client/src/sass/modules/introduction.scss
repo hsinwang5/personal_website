@@ -13,7 +13,7 @@
   border: 1px solid #515600;
   margin: auto;
   box-shadow: 0 2px 3px 2px #222220;
-  padding: 2% 3%;
+  padding: 10px 10px;
   z-index: 100;
 }
 .intro__nameplate--second {
@@ -28,7 +28,7 @@
 }
 .introduction__char {
   opacity: 0;
-  transform: translate(1000px, 0) scale(0.2);
+  transform: translate(50px, 0) scale(0.2);
   min-width: 0.5rem;
   display: inline-block;
 }

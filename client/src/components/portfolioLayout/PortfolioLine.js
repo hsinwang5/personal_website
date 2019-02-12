@@ -85,6 +85,7 @@ class PortfolioLine extends Component {
     return (
       <div className="portfolio-container">
         <div className="portfolio-line__circle" style={Style} ref={this.myRef}>
+          <Waypoint onEnter={this.testFunc} />
           <PortfolioThumbnail
             picture={this.props.picture}
             direction={this.props.direction}

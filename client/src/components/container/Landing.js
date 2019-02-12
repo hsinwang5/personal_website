@@ -9,31 +9,38 @@ class Landing extends Component {
     super(props);
     this.state = {
       overflow: "hidden",
-      isClicked: false
+      isClicked: false,
+      width: "100vw",
+      height: "100vh"
     };
 
     this.allowScroll = this.allowScroll.bind(this);
   }
 
   allowScroll() {
+    setTimeout(() => {
+      this.setState({
+        overflow: "scroll",
+        width: "inherit",
+        height: "inherit"
+      });
+    }, 3000);
     this.setState({
-      overflow: "scroll",
       isClicked: true
     });
-  }
-
-  handleScroll() {
-    console.log(window.pageYOffset);
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll.bind(this));
-    console.log("mounted");
+    // this.setState({
+    //   overflow: "scroll",
+    //   isClicked: true,
+    //   width: "inherit",
+    //   height: "inherit"
+    // });
   }
 
   render() {
     const Style = {
-      overflow: this.state.overflow
+      overflow: this.state.overflow,
+      width: this.state.width,
+      height: this.state.height
     };
     return (
       <div className="main" style={Style}>

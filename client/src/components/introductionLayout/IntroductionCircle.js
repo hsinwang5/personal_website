@@ -1,55 +1,95 @@
 import React, { Component } from "react";
 import Waypoint from "react-waypoint";
+import classnames from "classnames";
 
-class PortfolioLine extends Component {
+class IntroductionCircle extends Component {
+  /*
+  2 props: aniRight and aniLeft. Pass aniRight for a circle animating right,
+  and vice versa.
+  */
   constructor(props) {
     super(props);
 
     this.state = {
-      height: 1,
-      top: 0,
-      width: 0
+      left: "-10vw",
+      right: "-10vw",
+      top: this.props.top,
+      topOffset: "22%"
     };
 
-    this.calculateSize = this.calculateSize.bind(this);
-    this.testFunc = this.testFunc.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onLeave = this.onLeave.bind(this);
   }
 
-  testFunc() {
-    console.log("waypoint entered");
+  componentWillMount() {
+    let topOffset = window.innerWidth <= 850 ? "30%" : "18%";
+    this.setState({
+      topOffset
+    });
+  }
+
+  onEnter() {
+    if (this.props.aniRight) {
+      let left = "-10vw";
+      let top = this.props.top;
+      this.setState({
+        left,
+        top
+      });
+    }
+    if (this.props.aniLeft) {
+      let right = "-10vw";
+      let top = this.props.top;
+      this.setState({
+        right,
+        top
+      });
+    }
+  }
+
+  onLeave() {
+    if (this.props.aniRight) {
+      let left = "-100vw";
+      let top = "1000vh";
+      this.setState({
+        left,
+        top
+      });
+    }
+    if (this.props.aniLeft) {
+      let right = "-100vw";
+      let top = "1000vh";
+      this.setState({
+        right,
+        top
+      });
+    }
   }
 
   render() {
-    let Style;
-    if (this.props.direction === "left") {
-      Style = {
-        top: this.state.top,
-        borderTopLeftRadius: "1000px",
-        borderBottomLeftRadius: "1000px",
-        borderRight: "5px",
-        height: `${this.state.height}px`,
-        left: `-16%`,
-        width: `${this.state.width}px`
-      };
-    } else {
-      Style = {
-        top: this.state.top,
-        borderTopRightRadius: "1000px",
-        borderBottomRightRadius: "1000px",
-        borderLeft: "5px",
-        height: `${this.state.height}px`,
-        right: `-16%`,
-        width: `${this.state.width}px`
-      };
-    }
+    const Style = {
+      top: this.state.top,
+      left: `${this.props.aniRight ? this.state.left : "none"}`,
+      right: `${this.props.aniLeft ? this.state.right : "none"}`
+    };
     return (
-      <div className="portfolio-container">
-        <div className="portfolio-line__circle" style={Style}>
-          <Waypoint onEnter={this.testFunc} topOffset={"-50%"} />
-        </div>
-      </div>
+      <Waypoint
+        onEnter={this.onEnter}
+        onLeave={this.onLeave}
+        topOffset={this.state.topOffset}
+      >
+        <div
+          className={classnames("introduction__circle", {
+            "animation__introduction-circle1": this.props.aniLeft,
+            "animation__introduction-circle2": this.props.aniRight,
+            "introduction__circle--enter": this.state.isVisible,
+            "introduction__cirlce--leave": !this.state.isVisible
+          })}
+          style={Style}
+        />
+      </Waypoint>
     );
   }
 }
 
-export default PortfolioLine;
+export default IntroductionCircle;

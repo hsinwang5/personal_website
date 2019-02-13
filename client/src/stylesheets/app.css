@@ -11,7 +11,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  background: #4a4a48; }
+  background: #111111; }
 
 a {
   text-decoration: none;
@@ -215,8 +215,8 @@ h5 {
 .portfolio-line__circle {
   position: absolute;
   top: 0;
-  border: 5px solid #007bff;
-  border: 5px solid #70ba07; }
+  border: 5px solid #70ba07;
+  border: 7px solid #f20276; }
 
 .portfolio-item {
   top: 10%;
@@ -224,7 +224,8 @@ h5 {
   height: 80%;
   position: relative;
   border: 1px solid #2e7501;
-  transition: transform 0.5s; }
+  transition: transform 0.5s;
+  box-shadow: 0 0 2px 3px #02f286; }
   .portfolio-item:hover {
     transform: scale(1.1); }
 
@@ -234,20 +235,25 @@ h5 {
 
 .introduction-main-container {
   width: 100vw;
-  height: 100vh;
-  min-height: 720px;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.9rem;
-  padding: 2.5% 0; }
+  height: 115vh;
+  min-height: 875px;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 2.1rem;
+  padding: 4% 0;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid blue; }
 
 .introduction {
   position: relative;
-  width: 370px;
+  width: 90%;
+  max-width: 600px;
+  min-width: 365px;
   height: 700px;
   border: 1px solid #515600;
   margin: auto;
-  box-shadow: 0 2px 3px 2px #222220;
-  padding: 10px 10px;
+  box-shadow: 0 0 7px 3px #02f286;
+  padding: 15px 10px;
   z-index: 100; }
 
 .intro__nameplate--second {
@@ -258,11 +264,13 @@ h5 {
   margin: auto;
   text-align: center;
   position: relative;
-  color: #70ba07; }
+  color: #70ba07;
+  color: white;
+  z-index: 102; }
 
 .introduction__char {
   opacity: 0;
-  transform: translate(50px, 0) scale(0.2);
+  transform: translate(1000px, 0) scale(0.2);
   min-width: 0.5rem;
   display: inline-block; }
 
@@ -281,3 +289,48 @@ h5 {
   opacity: 1;
   transform: translate(0, 0) scale(1);
   transition: all 0.7s ease-in; }
+
+.introduction__circle {
+  z-index: 99;
+  border: 10px solid #f20276;
+  border-top-left-radius: 2000px;
+  border-top-right-radius: 2000px;
+  position: absolute;
+  height: 100px;
+  width: 200px;
+  border-bottom: 0;
+  transition: all 0.4s ease-in; }
+
+.introduction-transition {
+  position: absolute;
+  bottom: 5px;
+  height: 14vh;
+  min-height: 100px;
+  width: 99vw;
+  border: 1px solid red;
+  left: 0;
+  z-index: 1000; }
+
+@media only screen and (min-width: 80rem) {
+  .introduction-main-container {
+    min-height: 1050px; } }
+
+.animation__introduction-circle1 {
+  animation: spinLeft 15s infinite linear;
+  transform-origin: 50% 100%; }
+
+.animation__introduction-circle2 {
+  animation: spinRight 15s infinite linear;
+  transform-origin: 50% 100%; }
+
+@keyframes spinLeft {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(-360deg); } }
+
+@keyframes spinRight {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }

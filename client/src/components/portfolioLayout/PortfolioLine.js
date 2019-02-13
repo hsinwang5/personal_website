@@ -26,7 +26,7 @@ class PortfolioLine extends Component {
   //dynamically calculates the size of portfolio circles, call on render and window resize
   calculateSize() {
     //borderSize is the size of the circle's border plus 1 pixel
-    const borderSize = 5;
+    const borderSize = 7;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
     width = width > 225 ? 225 : width;
     this.setState(
@@ -85,7 +85,7 @@ class PortfolioLine extends Component {
     return (
       <div className="portfolio-container">
         <div className="portfolio-line__circle" style={Style} ref={this.myRef}>
-          <Waypoint onEnter={this.testFunc} />
+          {/* <Waypoint onEnter={this.testFunc} onLeave={this.testFunc} /> */}
           <PortfolioThumbnail
             picture={this.props.picture}
             direction={this.props.direction}

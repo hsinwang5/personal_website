@@ -3,9 +3,14 @@ $laptop: 80rem; //1280x720 standard HD
 $highdef: 120rem; //1920x1080 high def +
 
 //Hero page colors
-$backgroundDefaultColor: #fffffe;
+$heroDefaultColor: #fffffe;
+// $bodyDefaultColor: #4a4a48;
+$bodyDefaultColor: #111111;
 $firstNameplateColor: #70ba07;
 $lastNameplateColor: #069436;
+$introductionBoxColor: #d4d4d4;
+$shadowColor: #02f286;
+$circleColor: #f20276;
 
 // font-family: 'Questrial', sans-serif;
 // font-family: 'Aladin', cursive;
@@ -49,7 +54,7 @@ html {
 }
 
 body {
-  background: #4a4a48;
+  background: $bodyDefaultColor;
 }
 
 a {

@@ -1,0 +1,25 @@
+.animation__introduction-circle1 {
+  animation: spinLeft 15s infinite linear;
+  transform-origin: 50% 100%;
+}
+.animation__introduction-circle2 {
+  animation: spinRight 15s infinite linear;
+  transform-origin: 50% 100%;
+}
+
+@keyframes spinLeft {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spinRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

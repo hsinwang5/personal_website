@@ -15,8 +15,10 @@
 .portfolio-line__circle {
   position: absolute;
   top: 0;
-  border: 5px solid #007bff;
+  //If border size is changed you must also change the corresponding
+  //borderSize value located in PortfolioLine.js
   border: 5px solid #70ba07;
+  border: 7px solid $circleColor;
 }
 .portfolio-item {
   top: 10%;
@@ -25,6 +27,7 @@
   position: relative;
   border: 1px solid #2e7501;
   transition: transform 0.5s;
+  box-shadow: 0 0 2px 3px #02f286;
   &:hover {
     transform: scale(1.1);
   }

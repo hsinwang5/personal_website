@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Nameplate from "../heroLayout/Nameplate";
 import IntroductionText from "../introductionLayout/IntroductionText";
 import IntroductionTextfield from "../introductionLayout/IntroductionTextfield";
+import IntroductionCircle from "../introductionLayout/IntroductionCircle";
+import IntroductionTransition from "../introductionLayout/IntroductionTransition";
 
 class Introduction extends Component {
   render() {
@@ -26,7 +28,7 @@ class Introduction extends Component {
           />
           <IntroductionTextfield
             isClicked={this.props.isClicked}
-            text={"focused on front and back-end programming."}
+            text={"in Atlanta, Ga."}
             delay={1.5}
             margin={5}
           />
@@ -72,10 +74,14 @@ class Introduction extends Component {
             delay={3.5}
             margin={5}
           />
-          <div className="introduction__portfolio-line">
-            {/* <PortfolioLine /> */}
-          </div>
+          <IntroductionCircle top={"7%"} aniRight={true} />
+          <IntroductionCircle top={"7%"} aniLeft={true} />
+          <IntroductionCircle top={"40%"} aniRight={true} />
+          <IntroductionCircle top={"40%"} aniLeft={true} />
+          <IntroductionCircle top={"73%"} aniRight={true} />
+          <IntroductionCircle top={"73%"} aniLeft={true} />
         </div>
+        <IntroductionTransition />
       </div>
     );
   }

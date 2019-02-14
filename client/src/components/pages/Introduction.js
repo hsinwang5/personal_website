@@ -74,12 +74,12 @@ class Introduction extends Component {
             delay={3.5}
             margin={5}
           />
-          <IntroductionCircle top={"7%"} aniRight={true} />
-          <IntroductionCircle top={"7%"} aniLeft={true} />
-          <IntroductionCircle top={"40%"} aniRight={true} />
-          <IntroductionCircle top={"40%"} aniLeft={true} />
-          <IntroductionCircle top={"73%"} aniRight={true} />
-          <IntroductionCircle top={"73%"} aniLeft={true} />
+          <IntroductionCircle top={7} aniRight={true} />
+          <IntroductionCircle top={7} aniLeft={true} />
+          <IntroductionCircle top={40} aniRight={true} />
+          <IntroductionCircle top={40} aniLeft={true} />
+          <IntroductionCircle top={73} aniRight={true} />
+          <IntroductionCircle top={73} aniLeft={true} />
         </div>
         <IntroductionTransition />
       </div>

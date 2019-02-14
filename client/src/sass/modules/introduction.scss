@@ -1,13 +1,13 @@
 .introduction-main-container {
   width: 100vw;
-  height: 115vh;
+  height: 117.5vh;
   min-height: 875px;
   font-family: "Maven Pro", sans-serif;
   font-size: 2.1rem;
   padding: 4% 0;
   overflow: hidden;
   position: relative;
-  border: 1px solid blue;
+  border: 2px solid #5f9afa;
 }
 .introduction {
   position: relative;
@@ -64,20 +64,32 @@
   border-top-left-radius: 2000px;
   border-top-right-radius: 2000px;
   position: absolute;
-  height: 100px;
-  width: 200px;
+  height: 10vw;
+  width: 20vw;
+  min-height: 95px;
+  min-width: 190px;
   border-bottom: 0;
   transition: all 0.4s ease-in;
 }
 .introduction-transition {
   position: absolute;
   bottom: 5px;
-  height: 14vh;
+  height: 15%;
   min-height: 100px;
-  width: 99vw;
+  width: 99.8vw;
   border: 1px solid red;
   left: 0;
   z-index: 1000;
+}
+.introduction__anchor {
+  position: absolute;
+  height: 55px;
+  width: 55px;
+}
+.introduction__waypoint {
+  position: absolute;
+  height: 55px;
+  width: 55px;
 }
 
 @include laptop-cutoff {

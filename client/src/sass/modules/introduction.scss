@@ -92,13 +92,21 @@
   width: 55px;
 }
 
+@include mobile-cutoff {
+  .introduction__circle {
+    width: 42vw;
+    height: 21vw;
+    max-width: 340px;
+    max-height: 170px;
+  }
+}
 @include laptop-cutoff {
   .introduction-main-container {
     min-height: 1050px;
   }
   .introduction__circle {
-    width: 26vw;
-    height: 13vw;
+    width: 30vw;
+    height: 15vw;
     max-width: 420px;
     max-height: 210px;
   }

@@ -50,7 +50,11 @@ class IntroductionCircle extends Component {
     }
   }
   //animates circles down towards portfolio section
-  onLeave() {
+  onLeave({ currentPosition }) {
+    if (currentPosition === "below") {
+      console.log("stopped");
+      return;
+    }
     if (this.props.aniRight) {
       let left = "10vw";
       let top = this.state.animationDistance;

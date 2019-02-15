@@ -216,7 +216,8 @@ h5 {
   position: absolute;
   top: 0;
   border: 5px solid #70ba07;
-  border: 7px solid #f20276; }
+  border: 7px solid #f20276;
+  opacity: 0; }
 
 .portfolio-item {
   top: 10%;
@@ -232,6 +233,52 @@ h5 {
 .portfolio-item img {
   width: 100%;
   height: 100%; }
+
+.throwawayp {
+  height: 25px;
+  width: 25px;
+  border: 1px solid white;
+  position: absolute; }
+
+.animation__portfolioLineSlideInLeft {
+  animation: portfolioLineSlideInLeft 0.2s linear;
+  animation-fill-mode: forwards; }
+
+.animation__portfolioLineSlideInLeftReverse {
+  animation: portfolioLineSlideInRight 0.2s linear;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  pointer-events: none; }
+
+.animation__portfolioLineSlideInRight {
+  animation: portfolioLineSlideInRight 0.2s linear;
+  animation-fill-mode: forwards; }
+
+.animation__portfolioLineSlideInRightReverse {
+  animation: portfolioLineSlideInLeft 0.2s linear;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  pointer-events: none; }
+
+@keyframes portfolioLineSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100%, -180%); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0); } }
+
+@keyframes portfolioLineSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100%, -180%); }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0); } }
 
 .introduction-main-container {
   width: 100vw;
@@ -296,12 +343,12 @@ h5 {
   border-top-left-radius: 2000px;
   border-top-right-radius: 2000px;
   position: absolute;
-  height: 10vw;
-  width: 20vw;
+  height: 11vw;
+  width: 22vw;
   min-height: 95px;
   min-width: 190px;
   border-bottom: 0;
-  transition: all 0.4s ease-in; }
+  transition: all 0.475s ease-in; }
 
 .introduction-transition {
   position: absolute;
@@ -325,7 +372,12 @@ h5 {
 
 @media only screen and (min-width: 80rem) {
   .introduction-main-container {
-    min-height: 1050px; } }
+    min-height: 1050px; }
+  .introduction__circle {
+    width: 26vw;
+    height: 13vw;
+    max-width: 420px;
+    max-height: 210px; } }
 
 .animation__introduction-circle1 {
   animation: spinLeft 20s infinite linear;

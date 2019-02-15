@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Waypoint from "react-waypoint";
+import classNames from "classnames";
 
 import PortfolioThumbnail from "./PortfolioThumbnail";
-import InView from "../waypoint/InView";
 
 class PortfolioLine extends Component {
   constructor(props) {
@@ -11,12 +11,26 @@ class PortfolioLine extends Component {
     this.state = {
       height: 1,
       top: 0,
-      width: 0
+      width: 0,
+      topOffset: "20%",
+      leftCircle: false,
+      rightCircle: false,
+      reverseLeftCircle: false,
+      reverseRightCircle: false
     };
 
     this.myRef = React.createRef();
     this.calculateSize = this.calculateSize.bind(this);
-    this.testFunc = this.testFunc.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onLeave = this.onLeave.bind(this);
+  }
+
+  componentWillMount() {
+    //smooths animation transitions as user scrolls depending on screen height
+    let topOffset = window.innerHeight <= 700 ? "120%" : "1%";
+    this.setState({
+      topOffset
+    });
   }
 
   componentDidMount() {
@@ -24,6 +38,7 @@ class PortfolioLine extends Component {
   }
 
   //dynamically calculates the size of portfolio circles, call on render and window resize
+  //done for pixel perfect rendering on wavy line
   calculateSize() {
     //borderSize is the size of the circle's border plus 1 pixel
     const borderSize = 7;
@@ -53,8 +68,36 @@ class PortfolioLine extends Component {
     );
   }
 
-  testFunc() {
-    console.log("waypoint entered");
+  onEnter({ previousPosition, currentPosition }) {
+    if (previousPosition === "below") {
+      if (this.props.direction === "left") {
+        this.setState({
+          leftCircle: true,
+          reverseLeftCircle: false
+        });
+      } else {
+        this.setState({
+          rightCircle: true,
+          reverseRightCircle: false
+        });
+      }
+    }
+  }
+
+  onLeave({ previousPosition, currentPosition }) {
+    if (currentPosition === "below") {
+      if (this.props.direction === "left") {
+        this.setState({
+          leftCircle: false,
+          reverseLeftCircle: true
+        });
+      } else {
+        this.setState({
+          rightCircle: false,
+          reverseRightCircle: true
+        });
+      }
+    }
   }
 
   render() {
@@ -82,9 +125,27 @@ class PortfolioLine extends Component {
         width: `${this.state.width}px`
       };
     }
+    const waypointStyle = {
+      top: this.state.top
+    };
+    let lineClasses = classNames({
+      "portfolio-line__circle": true,
+      animation__portfolioLineSlideInLeft: this.state.leftCircle,
+      animation__portfolioLineSlideInRight: this.state.rightCircle,
+      animation__portfolioLineSlideInLeftReverse: this.state.reverseLeftCircle,
+      animation__portfolioLineSlideInRightReverse: this.state.reverseRightCircle
+    });
     return (
       <div className="portfolio-container">
-        <div className="portfolio-line__circle" style={Style} ref={this.myRef}>
+        <Waypoint
+          onEnter={this.onEnter}
+          onLeave={this.onLeave}
+          topOffset={this.state.topOffset}
+        >
+          <div className="throwawayp" style={waypointStyle} />
+        </Waypoint>
+
+        <div className={lineClasses} style={Style} ref={this.myRef}>
           {/* <Waypoint onEnter={this.testFunc} onLeave={this.testFunc} /> */}
           <PortfolioThumbnail
             picture={this.props.picture}

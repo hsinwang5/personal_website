@@ -14,7 +14,8 @@ class IntroductionCircle extends Component {
       left: "-10vw",
       right: "-10vw",
       top: this.props.top,
-      topOffset: "22%"
+      topOffset: "22%",
+      animationDistance: 3000
     };
 
     this.onEnter = this.onEnter.bind(this);
@@ -22,9 +23,11 @@ class IntroductionCircle extends Component {
   }
 
   componentWillMount() {
-    let topOffset = window.innerWidth <= 850 ? "19%" : "18%";
+    let topOffset = window.innerWidth <= 850 ? "15%" : "18%";
+    let animationDistance = window.innerHeight <= 1100 ? 3000 : 4500;
     this.setState({
-      topOffset
+      topOffset,
+      animationDistance
     });
   }
   //returns the circles to introduction section
@@ -49,16 +52,16 @@ class IntroductionCircle extends Component {
   //animates circles down towards portfolio section
   onLeave() {
     if (this.props.aniRight) {
-      let left = "20vw";
-      let top = 3000;
+      let left = "10vw";
+      let top = this.state.animationDistance;
       this.setState({
         left,
         top
       });
     }
     if (this.props.aniLeft) {
-      let right = "20vw";
-      let top = 3000;
+      let right = "10vw";
+      let top = this.state.animationDistance;
       this.setState({
         right,
         top

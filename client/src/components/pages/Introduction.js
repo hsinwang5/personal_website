@@ -34,7 +34,7 @@ class Introduction extends Component {
           />
           <IntroductionTextfield
             isClicked={this.props.isClicked}
-            text={"My projects have focused on:"}
+            text={"My portfolio focuses on:"}
             delay={2}
             margin={10}
           />

@@ -1,0 +1,47 @@
+.animation__portfolioLineSlideInLeft {
+  animation: portfolioLineSlideInLeft 0.2s linear;
+  animation-fill-mode: forwards;
+}
+.animation__portfolioLineSlideInLeftReverse {
+  animation: portfolioLineSlideInRight 0.2s linear;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  pointer-events: none;
+}
+.animation__portfolioLineSlideInRight {
+  animation: portfolioLineSlideInRight 0.2s linear;
+  animation-fill-mode: forwards;
+}
+.animation__portfolioLineSlideInRightReverse {
+  animation: portfolioLineSlideInLeft 0.2s linear;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  pointer-events: none;
+}
+
+@keyframes portfolioLineSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100%, -180%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes portfolioLineSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translate(100%, -180%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

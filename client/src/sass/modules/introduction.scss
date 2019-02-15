@@ -64,12 +64,12 @@
   border-top-left-radius: 2000px;
   border-top-right-radius: 2000px;
   position: absolute;
-  height: 10vw;
-  width: 20vw;
+  height: 11vw;
+  width: 22vw;
   min-height: 95px;
   min-width: 190px;
   border-bottom: 0;
-  transition: all 0.4s ease-in;
+  transition: all 0.475s ease-in;
 }
 .introduction-transition {
   position: absolute;
@@ -95,6 +95,12 @@
 @include laptop-cutoff {
   .introduction-main-container {
     min-height: 1050px;
+  }
+  .introduction__circle {
+    width: 26vw;
+    height: 13vw;
+    max-width: 420px;
+    max-height: 210px;
   }
 }
 

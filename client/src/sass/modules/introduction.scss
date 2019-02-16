@@ -29,7 +29,7 @@
 .introduction__text {
   margin: auto;
   text-align: center;
-  position: relative;
+  // position: relative;
   color: #70ba07;
   color: white;
   z-index: 102;
@@ -43,9 +43,10 @@
 .introduction__char2 {
   opacity: 0;
   transform: translate(0, -200px) scale(0.1);
-  // display: inline-block;
+  display: inline-block;
   text-align: center;
   margin: auto;
+  white-space: pre;
 }
 .introduction__char--transition {
   opacity: 1;
@@ -66,10 +67,10 @@
   position: absolute;
   height: 11vw;
   width: 22vw;
-  min-height: 95px;
-  min-width: 190px;
+  min-height: 80px;
+  min-width: 160px;
   border-bottom: 0;
-  transition: all 0.475s ease-in;
+  transition: all 0.35s ease-in;
 }
 .introduction-transition {
   position: absolute;

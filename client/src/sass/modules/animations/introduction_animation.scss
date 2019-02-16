@@ -6,6 +6,22 @@
   animation: spinRight 20s infinite linear;
   transform-origin: 50% 100%;
 }
+.animation__faceRight {
+  transform: rotate(270deg);
+  transform-origin: 50% 100%;
+  transition: 0.5s linear;
+}
+.animation__faceLeft {
+  transform: rotate(-270deg);
+  transform-origin: 50% 100%;
+  transition: 0.5s linear;
+}
+.animation__text {
+  position: absolute;
+  animation: textTransition 1s ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+}
 
 @keyframes spinLeft {
   0% {
@@ -21,5 +37,17 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes textTransition {
+  0% {
+    transform: scale(0);
+    // top: 50vh;
+    color: white;
+  }
+  100% {
+    transform: scale(2);
+    // top: 0vh;
+    color: red;
   }
 }

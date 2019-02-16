@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 class IntroductionCircle extends Component {
   /*
-  2 props: aniRight and aniLeft. Pass aniRight for a circle animating right,
+  2 props: aniRight and aniLeft. Pass aniRight for a left circle animating right,
   and vice versa.
   */
   constructor(props) {
@@ -15,7 +15,8 @@ class IntroductionCircle extends Component {
       right: "-10vw",
       top: this.props.top,
       topOffset: "22%",
-      animationDistance: 3000
+      animationDistance: 3000,
+      rotation: ""
     };
 
     this.onEnter = this.onEnter.bind(this);
@@ -56,7 +57,7 @@ class IntroductionCircle extends Component {
       return;
     }
     if (this.props.aniRight) {
-      let left = "10vw";
+      let left = "35vw";
       let top = this.state.animationDistance;
       this.setState({
         left,
@@ -64,7 +65,7 @@ class IntroductionCircle extends Component {
       });
     }
     if (this.props.aniLeft) {
-      let right = "10vw";
+      let right = "35vw";
       let top = this.state.animationDistance;
       this.setState({
         right,
@@ -94,9 +95,7 @@ class IntroductionCircle extends Component {
         <div
           className={classnames("introduction__circle", {
             "animation__introduction-circle1": this.props.aniLeft,
-            "animation__introduction-circle2": this.props.aniRight,
-            "introduction__circle--enter": this.state.isVisible,
-            "introduction__cirlce--leave": !this.state.isVisible
+            "animation__introduction-circle2": this.props.aniRight
           })}
           style={Style}
         />

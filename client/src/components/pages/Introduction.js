@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Nameplate from "../heroLayout/Nameplate";
 import IntroductionText from "../introductionLayout/IntroductionText";
 import IntroductionTextfield from "../introductionLayout/IntroductionTextfield";
+import IntroductionTextfieldSpan from "../introductionLayout/IntroductionTextfieldSpan";
 import IntroductionCircle from "../introductionLayout/IntroductionCircle";
 import IntroductionTransition from "../introductionLayout/IntroductionTransition";
 
@@ -38,40 +39,59 @@ class Introduction extends Component {
             delay={2}
             margin={10}
           />
+          {/* <IntroductionTextfieldSpan
+            isClicked={this.props.isClicked}
+            text={"My "}
+            delay={2}
+            margin={10}
+          />
+          <IntroductionTextfieldSpan
+            isClicked={this.props.isClicked}
+            text={"Portfolio"}
+            delay={2}
+            margin={10}
+            transition={true}
+          />
+          <IntroductionTextfieldSpan
+            isClicked={this.props.isClicked}
+            text={" focuses on:"}
+            delay={2}
+            margin={10}
+          /> */}
           <IntroductionTextfield
             isClicked={this.props.isClicked}
             text={"HTML"}
-            delay={3}
+            delay={2.3}
             margin={5}
           />
           <IntroductionTextfield
             isClicked={this.props.isClicked}
             text={"CSS3"}
-            delay={3.1}
+            delay={2.4}
             margin={5}
           />
           <IntroductionText
             isClicked={this.props.isClicked}
             text={"Javascript"}
-            delay={2.8}
+            delay={2.1}
             margin={5}
           />
           <IntroductionTextfield
             isClicked={this.props.isClicked}
             text={"React"}
-            delay={3.3}
+            delay={2.6}
             margin={5}
           />
           <IntroductionText
             isClicked={this.props.isClicked}
             text={"Node.js"}
-            delay={3}
+            delay={2.3}
             margin={5}
           />
           <IntroductionTextfield
             isClicked={this.props.isClicked}
             text={"Wordpress"}
-            delay={3.5}
+            delay={2.8}
             margin={5}
           />
           <IntroductionCircle top={7} aniRight={true} />

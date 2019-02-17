@@ -9,7 +9,8 @@ function Nameplate(props) {
   return (
     <div
       className={classnames("intro__nameplate animation__growNameplate", {
-        animation__dropNameplate: props.isClicked
+        animation__dropNameplate: props.isClicked,
+        inactive: props.introScrolled
       })}
       onClick={props.enterWebsiteClick}
     >

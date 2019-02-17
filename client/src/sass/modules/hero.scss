@@ -53,6 +53,8 @@
   transform: scale(0);
   box-shadow: 0 2px 3px 2px #222220;
   z-index: 100;
+  opacity: 1;
+  transition: 1s;
 }
 .intro__nameplate--first {
   width: 50%;

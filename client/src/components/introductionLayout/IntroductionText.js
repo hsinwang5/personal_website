@@ -12,9 +12,14 @@ class IntroductionText extends Component {
     const spans = strArray.map((char, index) => (
       <span
         key={index}
-        style={{ transitionDelay: `${index * 0.02 + this.props.delay}s` }}
+        style={{
+          transitionDelay: this.props.introScrolled
+            ? "0s"
+            : `${index * 0.02 + this.props.delay}s`
+        }}
         className={classnames("introduction__char", {
-          "introduction__char--transition": this.props.isClicked
+          "introduction__char--transition": this.props.isClicked,
+          inactive: this.props.introScrolled
         })}
       >
         {char}

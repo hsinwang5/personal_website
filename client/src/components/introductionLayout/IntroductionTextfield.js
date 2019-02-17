@@ -18,7 +18,8 @@ class IntroductionTextfield extends Component {
       <div className="introduction__text" style={Style}>
         <div
           className={classnames("introduction__char2", {
-            "introduction__char--transition2": this.props.isClicked
+            "introduction__char--transition2": this.props.isClicked,
+            inactive: this.props.introScrolled
           })}
           style={Style2}
         >

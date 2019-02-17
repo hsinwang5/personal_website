@@ -134,7 +134,6 @@ class Introduction extends Component {
         <IntroductionCircle top={34} aniLeft={true} />
         <IntroductionCircle top={58} aniRight={true} />
         <IntroductionCircle top={58} aniLeft={true} />
-        {/* <IntroductionTransition /> */}
       </div>
     );
   }

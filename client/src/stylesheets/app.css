@@ -28,14 +28,11 @@ h5 {
   font-family: "Alegreya Sans SC", sans-serif;
   text-align: center; }
 
-.inactive {
-  display: none; }
-
 .landing-waypoint {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: 7.5%; }
+  top: 30%; }
 
 .main {
   width: 100vw;
@@ -89,7 +86,9 @@ h5 {
   font-size: 4.1rem;
   transform: scale(0);
   box-shadow: 0 2px 3px 2px #222220;
-  z-index: 100; }
+  z-index: 100;
+  opacity: 1;
+  transition: 1s; }
 
 .intro__nameplate--first {
   width: 50%;
@@ -289,8 +288,7 @@ h5 {
   font-family: "Maven Pro", sans-serif;
   font-size: 2.1rem;
   overflow: hidden;
-  position: relative;
-  border: 2px solid #5f9afa; }
+  position: relative; }
 
 .introduction {
   position: relative;
@@ -358,7 +356,15 @@ h5 {
 .introduction__char--transition2 {
   opacity: 1;
   transform: translate(0, 0) scale(1);
-  transition: all 0.7s ease-in; }
+  transition: all 0.7s ease-in;
+  top: 0; }
+
+.animation__text {
+  opacity: 1;
+  transform: translate(0, -425%) scale(1.7);
+  transition: all 0.75s ease-in;
+  color: #f20276;
+  top: 0; }
 
 .introduction__circle {
   z-index: 99;
@@ -427,16 +433,6 @@ h5 {
   transform-origin: 50% 100%;
   transition: 0.5s linear; }
 
-.animation__text {
-  position: absolute;
-  animation: textTransition 1s ease-out;
-  animation-fill-mode: forwards; }
-
-.animation__text {
-  position: absolute;
-  transition: all 1s linear;
-  top: 50vh; }
-
 @keyframes spinLeft {
   0% {
     transform: rotate(0); }
@@ -452,9 +448,12 @@ h5 {
 @keyframes textTransition {
   0% {
     transform: scale(0);
-    bottom: 0;
+    top: 0;
     color: white; }
   100% {
     transform: scale(2);
-    bottom: 1vh;
+    top: -15000%;
     color: red; } }
+
+.inactive {
+  display: none; }

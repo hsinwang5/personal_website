@@ -9,20 +9,21 @@ class TextFieldPortfolio extends Component {
 
   render() {
     const Style2 = {
-      transitionDelay: this.props.waypointActivated
+      transitionDelay: this.props.introScrolled
         ? `none`
         : `${this.props.delay}s`
     };
-    console.log(Style2.transitionDelay);
+    let text = this.props.introScrolled ? "Portfolio" : "portfolio";
     return (
       <div
         className={classnames("introduction__char3", {
-          "introduction__char--transition2": this.props.isClicked,
-          animation__text: this.props.waypointActivated
+          "introduction__char--transition2":
+            this.props.isClicked && !this.props.introScrolled,
+          animation__text: this.props.introScrolled
         })}
         // style={Style2}
       >
-        portfolio
+        {text}
       </div>
     );
   }

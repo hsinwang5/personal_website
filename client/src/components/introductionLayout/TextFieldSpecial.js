@@ -15,14 +15,15 @@ class TextFieldSpecial extends Component {
     const Style2 = {
       transitionDelay: `${this.props.delay}s`
     };
-    let text1 = this.props.waypointActivated ? "" : "My ";
-    let text2 = this.props.waypointActivated ? "" : "focuses on:";
+    let text1 = this.props.introScrolled ? "" : "My ";
+    let text2 = this.props.introScrolled ? "" : "focuses on:";
     return (
       <div className="introduction__text" style={Style}>
         <div
           className={classnames("introduction__char3", {
             "introduction__char--transition2": this.props.isClicked,
-            animation__text: this.props.transition
+            animation__text: this.props.transition,
+            "introduction__char3--transition": this.props.introScrolled
           })}
           style={Style2}
         >
@@ -31,7 +32,7 @@ class TextFieldSpecial extends Component {
             isClicked={this.props.isClicked}
             delay={2}
             margin={10}
-            waypointActivated={this.props.waypointActivated}
+            introScrolled={this.props.introScrolled}
           />{" "}
           {text2}
         </div>

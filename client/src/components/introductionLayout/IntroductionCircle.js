@@ -27,7 +27,7 @@ class IntroductionCircle extends Component {
   componentWillMount() {
     let topOffset = window.innerWidth <= 850 ? "15%" : "14%";
     let animationDistance = window.innerHeight <= 1100 ? 3000 : 4500;
-    let sideOffset = window.innerWidth <= 850 ? "0" : "8vw";
+    let sideOffset = window.innerWidth <= 850 ? "0" : "11vw";
     this.setState({
       topOffset,
       animationDistance,

@@ -76,11 +76,12 @@ h5 {
   font-family: "Alegreya Sans SC", sans-serif;
   text-align: center;
 }
-.inactive {
-  display: none;
-}
 
 @import "modules/landing.scss";
 @import "modules/hero.scss";
 @import "modules/portfolio.scss";
 @import "modules/introduction.scss";
+
+.inactive {
+  display: none;
+}

@@ -16,17 +16,21 @@
   transform-origin: 50% 100%;
   transition: 0.5s linear;
 }
-.animation__text {
-  position: absolute;
-  animation: textTransition 1s ease-out;
-  animation-fill-mode: forwards;
-  // animation-delay: 7s;
-}
-.animation__text {
-  position: absolute;
-  transition: all 1s linear;
-  top: 50vh;
-}
+// .animation__text {
+//   position: absolute;
+//   left: 0;
+//   animation: textTransition 1s ease-out;
+//   animation-fill-mode: forwards;
+//   // animation-delay: 7s;
+// }
+// .animation__text {
+//   position: absolute;
+//   display: block;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   top: -20vh;
+// }
 
 @keyframes spinLeft {
   0% {
@@ -47,12 +51,12 @@
 @keyframes textTransition {
   0% {
     transform: scale(0);
-    bottom: 0;
+    top: 0;
     color: white;
   }
   100% {
     transform: scale(2);
-    bottom: 1vh;
+    top: -15000%;
     color: red;
   }
 }

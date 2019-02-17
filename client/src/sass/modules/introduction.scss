@@ -4,7 +4,7 @@
   min-height: 875px;
   font-family: "Maven Pro", sans-serif;
   font-size: 2.1rem;
-  padding: 4% 0;
+  // padding: 4% 0;
   overflow: hidden;
   position: relative;
   border: 2px solid #5f9afa;
@@ -20,7 +20,21 @@
   box-shadow: 0 0 7px 3px $shadowColor;
   padding: 15px 10px;
   z-index: 100;
+  top: 4%;
+  bottom: 20%;
+  transition: all 0.75s ease-out;
   // background: $introductionBoxColor;
+}
+.introduction--transition {
+  position: relative;
+  top: 85%;
+  height: 14.5%;
+  min-height: 100px;
+  width: 80%;
+  max-width: 1920px;
+  // min-width: 800px;
+  left: 0;
+  transition: all 0.75s ease-out;
 }
 .intro__nameplate--second {
   position: relative;
@@ -29,7 +43,7 @@
 .introduction__text {
   margin: auto;
   text-align: center;
-  // position: relative;
+  position: relative;
   color: #70ba07;
   color: white;
   z-index: 102;
@@ -43,10 +57,21 @@
 .introduction__char2 {
   opacity: 0;
   transform: translate(0, -200px) scale(0.1);
+  // display: inline-block;
+  text-align: center;
+  margin: auto;
+  // white-space: pre;
+}
+.introduction__char3 {
+  opacity: 0;
+  transform: translate(0, -200px) scale(0.1);
   display: inline-block;
   text-align: center;
   margin: auto;
-  white-space: pre;
+  transition: all 1s ease-out;
+  bottom: 0vh;
+  // top: 0vh;
+  // white-space: pre;
 }
 .introduction__char--transition {
   opacity: 1;

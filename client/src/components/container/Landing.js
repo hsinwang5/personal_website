@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Waypoint from "react-waypoint";
 
 import Hero from "../pages/Hero";
 import Introduction from "../pages/Introduction";
@@ -11,10 +12,25 @@ class Landing extends Component {
       overflow: "hidden",
       isClicked: false,
       width: "100vw",
-      height: "100vh"
+      height: "100vh",
+      introScrolled: false
     };
 
     this.allowScroll = this.allowScroll.bind(this);
+    this.onEnter = this.onEnter.bind(this);
+    this.onLeave = this.onLeave.bind(this);
+  }
+
+  onEnter() {
+    this.setState({
+      introScrolled: false
+    });
+  }
+
+  onLeave() {
+    this.setState({
+      introScrolled: true
+    });
   }
 
   allowScroll() {
@@ -28,12 +44,6 @@ class Landing extends Component {
     this.setState({
       isClicked: true
     });
-    // this.setState({
-    //   overflow: "scroll",
-    //   isClicked: true,
-    //   width: "inherit",
-    //   height: "inherit"
-    // });
   }
 
   render() {
@@ -45,7 +55,13 @@ class Landing extends Component {
     return (
       <div className="main" style={Style}>
         <Hero allowScroll={this.allowScroll} />
-        <Introduction isClicked={this.state.isClicked} />
+        <Waypoint onEnter={this.onEnter} onLeave={this.onLeave}>
+          <div className="landing-waypoint" />
+        </Waypoint>
+        <Introduction
+          isClicked={this.state.isClicked}
+          introScrolled={this.state.introScrolled}
+        />
         <Portfolio />
       </div>
     );

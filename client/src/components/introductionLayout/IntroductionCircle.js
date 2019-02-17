@@ -16,7 +16,8 @@ class IntroductionCircle extends Component {
       top: this.props.top,
       topOffset: "22%",
       animationDistance: 3000,
-      rotation: ""
+      rotation: "",
+      sideOffset: 0
     };
 
     this.onEnter = this.onEnter.bind(this);
@@ -24,17 +25,19 @@ class IntroductionCircle extends Component {
   }
 
   componentWillMount() {
-    let topOffset = window.innerWidth <= 850 ? "15%" : "18%";
+    let topOffset = window.innerWidth <= 850 ? "15%" : "14%";
     let animationDistance = window.innerHeight <= 1100 ? 3000 : 4500;
+    let sideOffset = window.innerWidth <= 850 ? "0" : "8vw";
     this.setState({
       topOffset,
-      animationDistance
+      animationDistance,
+      sideOffset
     });
   }
   //returns the circles to introduction section
   onEnter() {
     if (this.props.aniRight) {
-      let left = "-10vw";
+      let left = this.state.sideOffset;
       let top = this.props.top;
       this.setState({
         left,
@@ -42,7 +45,7 @@ class IntroductionCircle extends Component {
       });
     }
     if (this.props.aniLeft) {
-      let right = "-10vw";
+      let right = this.state.sideOffset;
       let top = this.props.top;
       this.setState({
         right,
@@ -57,7 +60,7 @@ class IntroductionCircle extends Component {
       return;
     }
     if (this.props.aniRight) {
-      let left = "35vw";
+      let left = "80vw";
       let top = this.state.animationDistance;
       this.setState({
         left,
@@ -65,7 +68,7 @@ class IntroductionCircle extends Component {
       });
     }
     if (this.props.aniLeft) {
-      let right = "35vw";
+      let right = "80vw";
       let top = this.state.animationDistance;
       this.setState({
         right,

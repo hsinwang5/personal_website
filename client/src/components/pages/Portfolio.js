@@ -31,31 +31,37 @@ class Portfolio extends Component {
             picture="images/hibachi.png"
             direction="left"
             place={0}
+            text={"Hibachi"}
           />
           <PortfolioLine
             picture="images/color_picker_game.png"
             direction="right"
             place={1}
+            text={"Color Picker Game"}
           />
           <PortfolioLine
             picture="images/jade_garden.png"
             direction="left"
             place={2}
+            text={"Jade Garden"}
           />
           <PortfolioLine
             picture="images/simon.png"
             direction="right"
             place={3}
+            text={"Simon Game"}
           />
           <PortfolioLine
             picture="images/developer_network.png"
             direction="left"
             place={4}
+            text={"Developer Network"}
           />
           <PortfolioLine
             picture="images/camp.png"
             direction="right"
             place={5}
+            text={"Camps (REST)"}
           />
         </div>
         <div className="portfolio">

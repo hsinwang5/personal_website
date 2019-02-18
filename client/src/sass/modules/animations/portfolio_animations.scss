@@ -1,30 +1,38 @@
 .animation__portfolioLineSlideInLeft {
-  animation: portfolioLineSlideInLeft 0.3s ease-out;
+  animation: portfolioLineSlideInLeft 0.5s ease-out;
   animation-fill-mode: forwards;
 }
 .animation__portfolioLineSlideInLeftReverse {
-  animation: portfolioLineSlideInRight 0.2s ease;
+  animation: portfolioLineSlideInRight 0.45s ease;
   // animation-fill-mode: forwards;
   animation-direction: reverse;
   // pointer-events: none;
 }
 .animation__portfolioLineSlideInRight {
-  animation: portfolioLineSlideInRight 0.3s ease-out;
+  animation: portfolioLineSlideInRight 0.5s ease-out;
   animation-fill-mode: forwards;
 }
 .animation__portfolioLineSlideInRightReverse {
-  animation: portfolioLineSlideInLeft 0.2s ease;
+  animation: portfolioLineSlideInLeft 0.45s ease;
   // animation-fill-mode: forwards;
   animation-direction: reverse;
   // pointer-events: none;
+}
+.animation__portfolio-item-left {
+  animation: thumbnailSlideLeft 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+.animation__portfolio-item-right {
+  animation: thumbnailSlideRight 0.5s ease-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes portfolioLineSlideInLeft {
   0% {
     opacity: 0;
-    transform: translate(-100%, -180%);
+    transform: translate(-400%, 0);
   }
-  40% {
+  70% {
     opacity: 1;
   }
   100% {
@@ -35,13 +43,36 @@
 @keyframes portfolioLineSlideInRight {
   0% {
     opacity: 0;
-    transform: translate(100%, -180%);
+    transform: translate(400%, 0);
   }
-  40% {
+  70% {
     opacity: 1;
   }
   100% {
     opacity: 1;
     transform: translate(0, 0);
+  }
+}
+@keyframes thumbnailSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translate(300%, 0);
+  }
+  // 70% {
+  //   opacity: 1;
+  // }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes thumbnailSlideRight {
+  0% {
+    opacity: 0;
+    transform: translate(-300%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
   }
 }

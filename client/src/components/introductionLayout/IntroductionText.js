@@ -15,7 +15,7 @@ class IntroductionText extends Component {
         style={{
           transitionDelay: this.props.introScrolled
             ? "0s"
-            : `${index * 0.02 + this.props.delay}s`
+            : `${index * 0.03 + this.props.delay}s`
         }}
         className={classnames("introduction__char", {
           "introduction__char--transition": this.props.isClicked,

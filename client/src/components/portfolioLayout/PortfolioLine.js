@@ -3,6 +3,7 @@ import Waypoint from "react-waypoint";
 import classNames from "classnames";
 
 import PortfolioThumbnail from "./PortfolioThumbnail";
+import PortfolioHeader from "./PortfolioHeader";
 
 class PortfolioLine extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class PortfolioLine extends Component {
       leftCircle: false,
       rightCircle: false,
       reverseLeftCircle: false,
-      reverseRightCircle: false
+      reverseRightCircle: false,
+      scrolled: false
     };
 
     this.myRef = React.createRef();
@@ -27,7 +29,7 @@ class PortfolioLine extends Component {
 
   componentWillMount() {
     //smooths animation transitions as user scrolls depending on screen height
-    let topOffset = window.innerHeight <= 700 ? "120%" : "1%";
+    let topOffset = window.innerHeight <= 700 ? "90%" : "90%";
     this.setState({
       topOffset
     });
@@ -73,12 +75,14 @@ class PortfolioLine extends Component {
       if (this.props.direction === "left") {
         this.setState({
           leftCircle: true,
-          reverseLeftCircle: false
+          reverseLeftCircle: false,
+          scrolled: true
         });
       } else {
         this.setState({
           rightCircle: true,
-          reverseRightCircle: false
+          reverseRightCircle: false,
+          scrolled: true
         });
       }
     }
@@ -89,12 +93,14 @@ class PortfolioLine extends Component {
       if (this.props.direction === "left") {
         this.setState({
           leftCircle: false,
-          reverseLeftCircle: true
+          reverseLeftCircle: true,
+          scrolled: false
         });
       } else {
         this.setState({
           rightCircle: false,
-          reverseRightCircle: true
+          reverseRightCircle: true,
+          scrolled: false
         });
       }
     }
@@ -125,31 +131,45 @@ class PortfolioLine extends Component {
         width: `${this.state.width}px`
       };
     }
-    const waypointStyle = {
-      top: this.state.top
-    };
-    let lineClasses = classNames({
-      "portfolio-line__circle": true,
-      animation__portfolioLineSlideInLeft: this.state.leftCircle,
-      animation__portfolioLineSlideInRight: this.state.rightCircle,
-      animation__portfolioLineSlideInLeftReverse: this.state.reverseLeftCircle,
-      animation__portfolioLineSlideInRightReverse: this.state.reverseRightCircle
-    });
     return (
       <div className="portfolio-container">
-        <Waypoint
+        {/* <Waypoint
           onEnter={this.onEnter}
           onLeave={this.onLeave}
           topOffset={this.state.topOffset}
         >
           <div className="throwawayp" style={waypointStyle} />
-        </Waypoint>
-
-        <div className={lineClasses} style={Style} ref={this.myRef}>
+        </Waypoint> */}
+        <div
+          className={classNames({
+            "portfolio-line__circle": true,
+            animation__portfolioLineSlideInLeft: this.state.leftCircle,
+            animation__portfolioLineSlideInRight: this.state.rightCircle,
+            animation__portfolioLineSlideInLeftReverse: this.state
+              .reverseLeftCircle,
+            animation__portfolioLineSlideInRightReverse: this.state
+              .reverseRightCircle
+          })}
+          style={Style}
+          ref={this.myRef}
+        >
+          <Waypoint
+            onEnter={this.onEnter}
+            onLeave={this.onLeave}
+            topOffset={"10%"}
+          >
+            <div className="throwawayp" />
+          </Waypoint>
           {/* <Waypoint onEnter={this.testFunc} onLeave={this.testFunc} /> */}
           <PortfolioThumbnail
             picture={this.props.picture}
             direction={this.props.direction}
+            scrolled={this.state.scrolled}
+          />
+          <PortfolioHeader
+            text={this.props.text}
+            direction={this.props.direction}
+            scrolled={this.state.scrolled}
           />
         </div>
       </div>

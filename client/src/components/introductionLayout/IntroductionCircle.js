@@ -26,7 +26,7 @@ class IntroductionCircle extends Component {
 
   componentWillMount() {
     let topOffset = window.innerWidth <= 850 ? "15%" : "14%";
-    let animationDistance = window.innerHeight <= 1100 ? 3000 : 4500;
+    let animationDistance = window.innerHeight <= 1100 ? 600 : 900;
     let sideOffset = window.innerWidth <= 850 ? "0" : "11vw";
     this.setState({
       topOffset,
@@ -60,7 +60,7 @@ class IntroductionCircle extends Component {
       return;
     }
     if (this.props.aniRight) {
-      let left = "80vw";
+      let left = "-50vw";
       let top = this.state.animationDistance;
       this.setState({
         left,
@@ -68,7 +68,7 @@ class IntroductionCircle extends Component {
       });
     }
     if (this.props.aniLeft) {
-      let right = "80vw";
+      let right = "-50vw";
       let top = this.state.animationDistance;
       this.setState({
         right,

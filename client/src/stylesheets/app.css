@@ -32,7 +32,11 @@ h5 {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: 30%; }
+  top: 45%; }
+
+@media only screen and (min-width: 80rem) {
+  .landing-waypoint {
+    top: 10%; } }
 
 .main {
   width: 100vw;
@@ -207,6 +211,9 @@ h5 {
   100% {
     transform: translate(0, 0); } }
 
+.portfolio-container {
+  position: relative; }
+
 .portfolio-page {
   width: 100vw;
   z-index: 100;
@@ -227,6 +234,22 @@ h5 {
   border: 7px solid #f20276;
   opacity: 0; }
 
+.portfolio-line__header {
+  top: 10%;
+  width: 140%;
+  height: 80%;
+  position: absolute;
+  color: white;
+  text-align: center;
+  padding: 60% 0;
+  transform: scale(0);
+  font-size: 1rem; }
+
+.portfolio-line__header--opacity {
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+  transition-delay: 0.5s; }
+
 .portfolio-item {
   top: 10%;
   width: 270%;
@@ -243,29 +266,41 @@ h5 {
   height: 100%; }
 
 .throwawayp {
-  position: absolute; }
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  left: 10%;
+  top: 50%; }
 
 .animation__portfolioLineSlideInLeft {
-  animation: portfolioLineSlideInLeft 0.3s ease-out;
+  animation: portfolioLineSlideInLeft 0.5s ease-out;
   animation-fill-mode: forwards; }
 
 .animation__portfolioLineSlideInLeftReverse {
-  animation: portfolioLineSlideInRight 0.2s ease;
+  animation: portfolioLineSlideInRight 0.45s ease;
   animation-direction: reverse; }
 
 .animation__portfolioLineSlideInRight {
-  animation: portfolioLineSlideInRight 0.3s ease-out;
+  animation: portfolioLineSlideInRight 0.5s ease-out;
   animation-fill-mode: forwards; }
 
 .animation__portfolioLineSlideInRightReverse {
-  animation: portfolioLineSlideInLeft 0.2s ease;
+  animation: portfolioLineSlideInLeft 0.45s ease;
   animation-direction: reverse; }
+
+.animation__portfolio-item-left {
+  animation: thumbnailSlideLeft 0.5s ease-out;
+  animation-fill-mode: forwards; }
+
+.animation__portfolio-item-right {
+  animation: thumbnailSlideRight 0.5s ease-out;
+  animation-fill-mode: forwards; }
 
 @keyframes portfolioLineSlideInLeft {
   0% {
     opacity: 0;
-    transform: translate(-100%, -180%); }
-  40% {
+    transform: translate(-400%, 0); }
+  70% {
     opacity: 1; }
   100% {
     opacity: 1;
@@ -274,12 +309,28 @@ h5 {
 @keyframes portfolioLineSlideInRight {
   0% {
     opacity: 0;
-    transform: translate(100%, -180%); }
-  40% {
+    transform: translate(400%, 0); }
+  70% {
     opacity: 1; }
   100% {
     opacity: 1;
     transform: translate(0, 0); } }
+
+@keyframes thumbnailSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translate(300%, 0); }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0); } }
+
+@keyframes thumbnailSlideRight {
+  0% {
+    opacity: 0;
+    transform: translate(-300%, 0); }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1; } }
 
 .introduction-main-container {
   width: 100vw;
@@ -303,7 +354,7 @@ h5 {
   z-index: 100;
   top: 4%;
   bottom: 20%;
-  transition: all 0.75s ease-out; }
+  transition: all 0.7s ease-out; }
 
 .introduction--transition {
   position: relative;
@@ -313,7 +364,7 @@ h5 {
   width: 80%;
   max-width: 1920px;
   left: 0;
-  transition: all 0.75s ease-out; }
+  transition: all 0.7s ease-out; }
 
 .intro__nameplate--second {
   position: relative;
@@ -329,7 +380,7 @@ h5 {
 
 .introduction__char {
   opacity: 0;
-  transform: translate(1000px, 0) scale(0.2);
+  transform: translate(100vw, 0) scale(0.2);
   min-width: 0.5rem;
   display: inline-block; }
 
@@ -341,7 +392,7 @@ h5 {
 
 .introduction__char3 {
   opacity: 0;
-  transform: translate(0, -200px) scale(0.1);
+  transform: translate(100vw, 0) scale(0.1);
   display: inline-block;
   text-align: center;
   margin: auto;
@@ -356,13 +407,13 @@ h5 {
 .introduction__char--transition2 {
   opacity: 1;
   transform: translate(0, 0) scale(1);
-  transition: all 0.7s ease-in;
+  transition: all 1s ease-in;
   top: 0; }
 
 .animation__text {
   opacity: 1;
   transform: translate(0, -425%) scale(1.7);
-  transition: all 0.75s ease-in;
+  transition: all 0.7s ease-in;
   color: #f20276;
   top: 0; }
 
@@ -377,17 +428,7 @@ h5 {
   min-height: 80px;
   min-width: 160px;
   border-bottom: 0;
-  transition: all 0.35s ease-in; }
-
-.introduction-transition {
-  position: absolute;
-  bottom: 5px;
-  height: 15%;
-  min-height: 100px;
-  width: 99.8vw;
-  border: 1px solid red;
-  left: 0;
-  z-index: 1000; }
+  transition: all 0.4s ease-in-out; }
 
 .introduction__anchor {
   position: absolute;

@@ -1,3 +1,6 @@
+.portfolio-container {
+  position: relative;
+}
 .portfolio-page {
   width: 100vw;
   // position: relative;
@@ -22,6 +25,22 @@
   border: 7px solid $circleColor;
   opacity: 0;
 }
+.portfolio-line__header {
+  top: 10%;
+  width: 140%;
+  height: 80%;
+  position: absolute;
+  color: white;
+  text-align: center;
+  padding: 60% 0;
+  transform: scale(0);
+  font-size: 1rem;
+}
+.portfolio-line__header--opacity {
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
+  transition-delay: 0.5s;
+}
 .portfolio-item {
   top: 10%;
   width: 270%;
@@ -40,6 +59,10 @@
 }
 .throwawayp {
   position: absolute;
+  width: 5px;
+  height: 5px;
+  left: 10%;
+  top: 50%;
 }
 
 @import "animations/portfolio_animations.scss";

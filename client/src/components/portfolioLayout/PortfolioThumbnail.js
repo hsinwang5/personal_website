@@ -1,4 +1,5 @@
 import React from "react";
+import classnames from "classnames";
 
 function PortfolioThumbnail(props) {
   let Style;
@@ -12,7 +13,16 @@ function PortfolioThumbnail(props) {
     };
   }
   return (
-    <div className="portfolio-item" style={Style}>
+    <div
+      className={classnames({
+        "portfolio-item": true,
+        "animation__portfolio-item-left":
+          props.scrolled && props.direction === "left",
+        "animation__portfolio-item-right":
+          props.scrolled && props.direction === "right"
+      })}
+      style={Style}
+    >
       <a href="http://www.google.com" rel="noopener noreferrer" target="_blank">
         <img src={`${props.picture}`} alt="portfolio project" />
       </a>

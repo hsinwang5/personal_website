@@ -23,19 +23,21 @@
   z-index: 100;
   top: 4%;
   bottom: 20%;
-  transition: all 0.75s ease-out;
+  transition: all 0.7s ease-out;
   // background: $introductionBoxColor;
 }
+//related animation - .animation__text, is further below
 .introduction--transition {
   position: relative;
   top: 85%;
+  // transform: translate(0, 385%);
   height: 14.5%;
   min-height: 100px;
   width: 80%;
   max-width: 1920px;
   // min-width: 800px;
   left: 0;
-  transition: all 0.75s ease-out;
+  transition: all 0.7s ease-out;
 }
 .intro__nameplate--second {
   position: relative;
@@ -51,7 +53,7 @@
 }
 .introduction__char {
   opacity: 0;
-  transform: translate(1000px, 0) scale(0.2);
+  transform: translate(100vw, 0) scale(0.2);
   min-width: 0.5rem;
   display: inline-block;
 }
@@ -65,7 +67,7 @@
 }
 .introduction__char3 {
   opacity: 0;
-  transform: translate(0, -200px) scale(0.1);
+  transform: translate(100vw, 0) scale(0.1);
   display: inline-block;
   text-align: center;
   margin: auto;
@@ -74,13 +76,6 @@
   // top: 0vh;
   // white-space: pre;
 }
-// .introduction__char3--transition {
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   margin: auto;
-//   top: -1700%;
-// }
 .introduction__char--transition {
   opacity: 1;
   transform: translate(0, 0) scale(1);
@@ -89,13 +84,13 @@
 .introduction__char--transition2 {
   opacity: 1;
   transform: translate(0, 0) scale(1);
-  transition: all 0.7s ease-in;
+  transition: all 1s ease-in;
   top: 0;
 }
 .animation__text {
   opacity: 1;
   transform: translate(0, -425%) scale(1.7);
-  transition: all 0.75s ease-in;
+  transition: all 0.7s ease-in;
   color: $circleColor;
   top: 0;
 }
@@ -111,17 +106,7 @@
   min-height: 80px;
   min-width: 160px;
   border-bottom: 0;
-  transition: all 0.35s ease-in;
-}
-.introduction-transition {
-  position: absolute;
-  bottom: 5px;
-  height: 15%;
-  min-height: 100px;
-  width: 99.8vw;
-  border: 1px solid red;
-  left: 0;
-  z-index: 1000;
+  transition: all 0.4s ease-in-out;
 }
 .introduction__anchor {
   position: absolute;

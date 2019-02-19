@@ -63,6 +63,7 @@ class Landing extends Component {
           introScrolled={this.state.introScrolled}
         />
         <Portfolio />
+        <div className="test-screen" />
       </div>
     );
   }

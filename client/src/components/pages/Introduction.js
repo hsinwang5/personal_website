@@ -20,19 +20,6 @@ class Introduction extends Component {
     // this.onLeave = this.onLeave.bind(this);
   }
 
-  // onLeave() {
-  //   this.setState({
-  //     waypointActivated: true
-  //   });
-  //   console.log(this.state.waypointActivated + " waypoint");
-  // }
-
-  // onEnter() {
-  //   this.setState({
-  //     waypointActivated: false
-  //   });
-  // }
-
   render() {
     return (
       <div className="introduction-main-container">

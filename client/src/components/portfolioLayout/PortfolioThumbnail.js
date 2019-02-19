@@ -17,9 +17,9 @@ function PortfolioThumbnail(props) {
       className={classnames({
         "portfolio-item": true,
         "animation__portfolio-item-left":
-          props.scrolled && props.direction === "left",
+          props.scrolled && props.direction === "left" && props.thumbnailSwitch,
         "animation__portfolio-item-right":
-          props.scrolled && props.direction === "right"
+          props.scrolled && props.direction === "right" && props.thumbnailSwitch
       })}
       style={Style}
     >

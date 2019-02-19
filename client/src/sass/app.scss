@@ -55,6 +55,7 @@ html {
 
 body {
   background: $bodyDefaultColor;
+  // overflow: hidden;
 }
 
 a {
@@ -85,3 +86,12 @@ h5 {
 .inactive {
   display: none;
 }
+
+// .test-screen {
+//   position: absolute;
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: hidden;
+//   border: 1px solid white;
+//   top: 1516px;
+// }

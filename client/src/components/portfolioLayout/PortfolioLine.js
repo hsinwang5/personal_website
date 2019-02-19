@@ -18,13 +18,16 @@ class PortfolioLine extends Component {
       rightCircle: false,
       reverseLeftCircle: false,
       reverseRightCircle: false,
-      scrolled: false
+      scrolled: false,
+      thumbnailSwitch: false,
+      clicked: false
     };
 
     this.myRef = React.createRef();
     this.calculateSize = this.calculateSize.bind(this);
     this.onEnter = this.onEnter.bind(this);
     this.onLeave = this.onLeave.bind(this);
+    this.onClick = this.onClick.bind(this);
   }
 
   componentWillMount() {
@@ -71,23 +74,31 @@ class PortfolioLine extends Component {
   }
 
   onEnter({ previousPosition, currentPosition }) {
+    console.log(window.pageYOffset);
     if (previousPosition === "below") {
       if (this.props.direction === "left") {
         this.setState({
           leftCircle: true,
           reverseLeftCircle: false,
-          scrolled: true
+          scrolled: true,
+          thumbnailSwitch: true
         });
       } else {
         this.setState({
           rightCircle: true,
           reverseRightCircle: false,
-          scrolled: true
+          scrolled: true,
+          thumbnailSwitch: true
         });
       }
     }
+    //removes animation class from thumbnails to allow further animations
+    setTimeout(() => {
+      this.setState({
+        thumbnailSwitch: false
+      });
+    }, 500);
   }
-
   onLeave({ previousPosition, currentPosition }) {
     if (currentPosition === "below") {
       if (this.props.direction === "left") {
@@ -104,6 +115,12 @@ class PortfolioLine extends Component {
         });
       }
     }
+  }
+  //transforms portfolioline into textbox when thumbnail is clicked
+  onClick() {
+    this.setState({
+      click: true
+    });
   }
 
   render() {
@@ -165,6 +182,8 @@ class PortfolioLine extends Component {
             picture={this.props.picture}
             direction={this.props.direction}
             scrolled={this.state.scrolled}
+            thumbnailSwitch={this.state.thumbnailSwitch}
+            handleClick={this.onClick}
           />
           <PortfolioHeader
             text={this.props.text}

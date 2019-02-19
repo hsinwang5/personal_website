@@ -49,6 +49,7 @@
   border: 1px solid #2e7501;
   transition: transform 0.5s;
   box-shadow: 0 0 2px 3px #02f286;
+  // transform: scale(1.1);
   &:hover {
     transform: scale(1.1);
   }

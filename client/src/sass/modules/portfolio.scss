@@ -24,6 +24,7 @@
   border: 5px solid #70ba07;
   border: 7px solid $circleColor;
   opacity: 0;
+  // transition: all 1s ease-out;
 }
 .portfolio-line__header {
   top: 10%;
@@ -67,3 +68,7 @@
 }
 
 @import "animations/portfolio_animations.scss";
+
+.portfolio-line__circle {
+  top: 800px;
+}

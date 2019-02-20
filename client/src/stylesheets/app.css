@@ -332,6 +332,9 @@ h5 {
     transform: translate(0, 0);
     opacity: 1; } }
 
+.portfolio-line__circle {
+  top: 800px; }
+
 .introduction-main-container {
   width: 100vw;
   height: 117.5vh;

@@ -22,10 +22,9 @@ function PortfolioThumbnail(props) {
           props.scrolled && props.direction === "right" && props.thumbnailSwitch
       })}
       style={Style}
+      onClick={props.handleClick}
     >
-      <a href="http://www.google.com" rel="noopener noreferrer" target="_blank">
-        <img src={`${props.picture}`} alt="portfolio project" />
-      </a>
+      <img src={`${props.picture}`} alt="portfolio project" />
       {/* <img src={`${props.picture}`} alt="portfolio project" /> */}
     </div>
   );

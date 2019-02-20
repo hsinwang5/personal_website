@@ -49,12 +49,14 @@ class PortfolioLine extends Component {
     const borderSize = 7;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
     width = width > 225 ? 225 : width;
+    console.log(width);
     this.setState(
       {
         width
       },
       () => {
         const height = Math.round(this.myRef.current.offsetWidth * 2.115);
+        console.log(this.myRef.current.offsetWidth);
         this.setState(
           {
             height
@@ -118,16 +120,18 @@ class PortfolioLine extends Component {
   }
   //transforms portfolioline into textbox when thumbnail is clicked
   onClick() {
+    this.props.handleClick();
     this.setState({
-      click: true
+      clicked: true
     });
+    console.log("this is from portline: " + this.props.clicked);
   }
 
   render() {
     let Style;
     //calculate where to place the portfolio circle along vertical axis
     //Set direction of circle + other properties in portfolio page
-    if (this.props.direction === "left") {
+    if (this.props.direction === "left" && !this.state.clicked) {
       Style = {
         top: this.state.top,
         borderTopLeftRadius: "1000px",
@@ -137,7 +141,7 @@ class PortfolioLine extends Component {
         left: `-16%`,
         width: `${this.state.width}px`
       };
-    } else {
+    } else if (this.props.direction === "right" && !this.state.clicked) {
       Style = {
         top: this.state.top,
         borderTopRightRadius: "1000px",
@@ -147,16 +151,25 @@ class PortfolioLine extends Component {
         right: `-16%`,
         width: `${this.state.width}px`
       };
+    } else if (this.state.clicked) {
+      Style = {
+        top: `${this.props.viewportTop}px`
+        // left: "0",
+        // right: "0",
+        // margin: "auto",
+        // height: `${this.state.height}px`,
+        // width: `${this.state.width}px`
+      };
     }
     return (
       <div className="portfolio-container">
         {/* <Waypoint
-          onEnter={this.onEnter}
-          onLeave={this.onLeave}
-          topOffset={this.state.topOffset}
-        >
-          <div className="throwawayp" style={waypointStyle} />
-        </Waypoint> */}
+         onEnter={this.onEnter}
+         onLeave={this.onLeave}
+         topOffset={this.state.topOffset}
+       >
+         <div className="throwawayp" style={waypointStyle} />
+       </Waypoint> */}
         <div
           className={classNames({
             "portfolio-line__circle": true,

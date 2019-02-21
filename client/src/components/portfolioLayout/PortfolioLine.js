@@ -4,6 +4,9 @@ import classNames from "classnames";
 
 import PortfolioThumbnail from "./PortfolioThumbnail";
 import PortfolioHeader from "./PortfolioHeader";
+import IntroductionText from "../introductionLayout/IntroductionText";
+import PortfolioTextfield from "./PortfolioTextfield";
+import PortfolioScreen from "./PortfolioScreen";
 
 class PortfolioLine extends Component {
   constructor(props) {
@@ -20,7 +23,11 @@ class PortfolioLine extends Component {
       reverseRightCircle: false,
       scrolled: false,
       thumbnailSwitch: false,
-      clicked: false
+      clicked: false,
+      defaultHeight: 0, //calculates constant height of thumbnail
+      defaultWidth: 0, //calculates constant width of thumbnail
+      isMobile: false,
+      loadingDone: false //needed due to responsive values being calucated after load
     };
 
     this.myRef = React.createRef();
@@ -28,6 +35,8 @@ class PortfolioLine extends Component {
     this.onEnter = this.onEnter.bind(this);
     this.onLeave = this.onLeave.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.closeClick = this.closeClick.bind(this);
+    this.setResponsiveness = this.setResponsiveness.bind(this);
   }
 
   componentWillMount() {
@@ -39,12 +48,16 @@ class PortfolioLine extends Component {
   }
 
   componentDidMount() {
-    this.calculateSize();
+    setTimeout(() => {
+      this.calculateSize();
+    }, 2000);
+    this.setResponsiveness();
   }
 
   //dynamically calculates the size of portfolio circles, call on render and window resize
   //done for pixel perfect rendering on wavy line
   calculateSize() {
+    console.log("calc size");
     //borderSize is the size of the circle's border plus 1 pixel
     const borderSize = 7;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
@@ -52,14 +65,16 @@ class PortfolioLine extends Component {
     console.log(width);
     this.setState(
       {
-        width
+        width,
+        defaultWidth: width
       },
       () => {
         const height = Math.round(this.myRef.current.offsetWidth * 2.115);
         console.log(this.myRef.current.offsetWidth);
         this.setState(
           {
-            height
+            height,
+            defaultHeight: height
           },
           () => {
             //calculate the top offset, factoring in the size of the circle's border
@@ -74,7 +89,13 @@ class PortfolioLine extends Component {
       }
     );
   }
-
+  //Calculates landscape or portrait position on mount
+  setResponsiveness() {
+    const isMobile = window.innerWidth < window.innerHeight ? true : false;
+    this.setState({
+      isMobile
+    });
+  }
   onEnter({ previousPosition, currentPosition }) {
     console.log(window.pageYOffset);
     if (previousPosition === "below") {
@@ -122,9 +143,16 @@ class PortfolioLine extends Component {
   onClick() {
     this.props.handleClick();
     this.setState({
-      clicked: true
+      clicked: true,
+      loadingDone: true
     });
-    console.log("this is from portline: " + this.props.clicked);
+    document.body.style.overflow = "hidden";
+  }
+  closeClick() {
+    this.setState({
+      clicked: false
+    });
+    document.body.style.overflow = "scroll";
   }
 
   render() {
@@ -139,7 +167,8 @@ class PortfolioLine extends Component {
         borderRight: "5px",
         height: `${this.state.height}px`,
         left: `-16%`,
-        width: `${this.state.width}px`
+        width: `${this.state.width}px`,
+        transition: this.state.loadingDone ? `all 0.7s ease-out` : "0"
       };
     } else if (this.props.direction === "right" && !this.state.clicked) {
       Style = {
@@ -149,27 +178,22 @@ class PortfolioLine extends Component {
         borderLeft: "5px",
         height: `${this.state.height}px`,
         right: `-16%`,
-        width: `${this.state.width}px`
+        width: `${this.state.width}px`,
+        transition: this.state.loadingDone ? `all 0.7s ease-out` : "0"
       };
     } else if (this.state.clicked) {
       Style = {
-        top: `${this.props.viewportTop}px`
-        // left: "0",
-        // right: "0",
-        // margin: "auto",
-        // height: `${this.state.height}px`,
-        // width: `${this.state.width}px`
+        top: `${this.props.viewportTop + window.innerHeight * 0.45}px`,
+        transition: "all .6s ease-out",
+        height: `${window.innerHeight * 0.52}px`,
+        width: this.state.isMobile ? `80vw` : `70vw`,
+        left: `-25vw`,
+        zIndex: `101`,
+        background: `black`
       };
     }
     return (
       <div className="portfolio-container">
-        {/* <Waypoint
-         onEnter={this.onEnter}
-         onLeave={this.onLeave}
-         topOffset={this.state.topOffset}
-       >
-         <div className="throwawayp" style={waypointStyle} />
-       </Waypoint> */}
         <div
           className={classNames({
             "portfolio-line__circle": true,
@@ -190,20 +214,39 @@ class PortfolioLine extends Component {
           >
             <div className="throwawayp" />
           </Waypoint>
-          {/* <Waypoint onEnter={this.testFunc} onLeave={this.testFunc} /> */}
           <PortfolioThumbnail
             picture={this.props.picture}
             direction={this.props.direction}
             scrolled={this.state.scrolled}
             thumbnailSwitch={this.state.thumbnailSwitch}
             handleClick={this.onClick}
+            clicked={this.state.clicked}
+            viewportTop={this.props.viewportTop}
+            defaultHeight={this.state.defaultHeight}
+            defaultWidth={this.state.defaultWidth}
+            isMobile={this.state.isMobile}
           />
           <PortfolioHeader
             text={this.props.text}
             direction={this.props.direction}
             scrolled={this.state.scrolled}
+            clicked={this.state.clicked}
           />
         </div>
+        <PortfolioTextfield
+          text={this.props.description}
+          clicked={this.state.clicked}
+          margin={10}
+          delay={10}
+          top={`${this.props.viewportTop + window.innerHeight * 0.45}px`}
+          width={this.state.isMobile ? `80vw` : `70vw`}
+          height={`${window.innerHeight * 0.52}px`}
+        />
+        <PortfolioScreen
+          top={this.props.viewportTop}
+          clicked={this.state.clicked}
+          handleClick={this.closeClick}
+        />
       </div>
     );
   }

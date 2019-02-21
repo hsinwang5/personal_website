@@ -17,7 +17,8 @@ export default function PortfolioHeader(props) {
     <div
       className={classnames({
         "portfolio-line__header": true,
-        "portfolio-line__header--opacity": props.scrolled
+        "portfolio-line__header--opacity": props.scrolled,
+        inactive: props.clicked
       })}
       style={style}
     >

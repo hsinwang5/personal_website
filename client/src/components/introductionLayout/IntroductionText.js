@@ -8,7 +8,10 @@ class IntroductionText extends Component {
   }
 
   render() {
-    const strArray = this.props.text.split("");
+    const strArray =
+      typeof this.props.text === "string"
+        ? this.props.text.split("")
+        : "No string specified".split("");
     const spans = strArray.map((char, index) => (
       <span
         key={index}
@@ -18,8 +21,8 @@ class IntroductionText extends Component {
             : `${index * 0.03 + this.props.delay}s`
         }}
         className={classnames("introduction__char", {
-          "introduction__char--transition": this.props.isClicked,
-          inactive: this.props.introScrolled
+          inactive: this.props.introScrolled,
+          "introduction__char--transition": this.props.isClicked
         })}
       >
         {char}

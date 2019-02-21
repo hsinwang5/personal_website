@@ -28,7 +28,6 @@ class Portfolio extends Component {
       viewportTop
     });
   }
-
   render() {
     //Calculates height of entire portfolio for element stacking purposes
     //since portfolio makes use of absolute and relative positioning
@@ -51,6 +50,9 @@ class Portfolio extends Component {
             clicked={this.state.clicked}
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
+            description={
+              "A Wordpress custom theme website for Hibachi Chinese & Japanese Restaurant. Made in Wordpress with javascript, lodash, and SCSS."
+            }
           />
           <PortfolioLine
             picture="images/color_picker_game.png"
@@ -60,6 +62,9 @@ class Portfolio extends Component {
             clicked={this.state.clicked}
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
+            description={
+              "Color picker game made in Javascript. Presents user with a color written in RGB, which the user must then guess. Improves recognition of RGB values used in CSS."
+            }
           />
           <PortfolioLine
             picture="images/jade_garden.png"
@@ -69,6 +74,9 @@ class Portfolio extends Component {
             clicked={this.state.clicked}
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
+            description={
+              "My first website. Mockup of a fake restaurant made in node.js using BEM, with a few API calls. Contains some experimental stuff thrown in for fun."
+            }
           />
           <PortfolioLine
             picture="images/simon.png"
@@ -78,6 +86,9 @@ class Portfolio extends Component {
             clicked={this.state.clicked}
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
+            description={
+              "One of my first javascript projects, done for FreeCodeCamp. This taught me how to create polygons out of pure CSS and positioning, by reverse-engineering other people's CSS code."
+            }
           />
           <PortfolioLine
             picture="images/developer_network.png"
@@ -87,6 +98,9 @@ class Portfolio extends Component {
             clicked={this.state.clicked}
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
+            description={
+              "A full-stack appplication with node.js as backend, MongoDB database, and React as a front-end. Made with the assistance of Brad Traversy."
+            }
           />
           <PortfolioLine
             picture="images/camp.png"
@@ -96,6 +110,9 @@ class Portfolio extends Component {
             clicked={this.state.clicked}
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
+            description={
+              "A basic CRUD site allowing users to add and view campgrounds, as well as create basic user accounts."
+            }
           />
         </div>
       </div>

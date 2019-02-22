@@ -26,7 +26,7 @@ function PortfolioThumbnail(props) {
       left: "0",
       right: "0",
       margin: "auto",
-      transform: props.isMobile ? `scale(1.35)` : `scale(1.2)`
+      transform: props.isMobile ? `scale(1.35)` : `scale(1.28)`
     };
   }
   return (

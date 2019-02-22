@@ -5,9 +5,7 @@ import Nameplate from "../heroLayout/Nameplate";
 import IntroductionText from "../introductionLayout/IntroductionText";
 import IntroductionTextfield from "../introductionLayout/IntroductionTextfield";
 import IntroductionCircle from "../introductionLayout/IntroductionCircle";
-import IntroductionTransition from "../introductionLayout/IntroductionTransition";
 import TextFieldSpecial from "../introductionLayout/TextFieldSpecial";
-import Waypoint from "react-waypoint";
 
 class Introduction extends Component {
   constructor(props) {
@@ -16,8 +14,7 @@ class Introduction extends Component {
       waypointActivated: false
     };
 
-    // this.onEnter = this.onEnter.bind(this);
-    // this.onLeave = this.onLeave.bind(this);
+    //If you're looking for onEnter waypoint, it is located in Landing.js
   }
 
   render() {
@@ -105,15 +102,6 @@ class Introduction extends Component {
             margin={5}
             introScrolled={this.props.introScrolled}
           />
-          {/* <Waypoint onEnter={this.onEnter} onLeave={this.onLeave}>
-            <div className="introduction__waypoint" style={waypointStyle} />
-          </Waypoint> */}
-          {/* <IntroductionCircle top={7} aniRight={true} />
-          <IntroductionCircle top={7} aniLeft={true} />
-          <IntroductionCircle top={40} aniRight={true} />
-          <IntroductionCircle top={40} aniLeft={true} />
-          <IntroductionCircle top={73} aniRight={true} />
-          <IntroductionCircle top={73} aniLeft={true} /> */}
         </div>
         <IntroductionCircle top={11} aniRight={true} />
         <IntroductionCircle top={11} aniLeft={true} />

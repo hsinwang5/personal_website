@@ -76,7 +76,7 @@ class Portfolio extends Component {
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
             description={
-              "My first website. Mockup of a fake restaurant made in node.js using BEM, with a few API calls. Contains some experimental stuff thrown in for fun."
+              "My first website using node.js and templating. Mockup of a fake restaurant made in node.js using BEM, with a few API calls. Contains some experimental stuff thrown in for fun."
             }
           />
           <PortfolioLine
@@ -100,7 +100,7 @@ class Portfolio extends Component {
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
             description={
-              "A full-stack appplication with node.js as backend, MongoDB database, and React as a front-end. Made with the assistance of Brad Traversy."
+              "A full-stack appplication with node.js as backend, MongoDB database, and React as a front-end. Makes use of bootstrap. Made with the assistance of Brad Traversy."
             }
           />
           <PortfolioLine
@@ -112,7 +112,7 @@ class Portfolio extends Component {
             handleClick={this.onClick}
             viewportTop={this.state.viewportTop}
             description={
-              "A basic CRUD site allowing users to add and view campgrounds, as well as create basic user accounts."
+              "A basic CRUD site allowing users to add and view campgrounds, as well as create basic user accounts (bootcamp project). Uses Semantic UI. Built using basic REST principles."
             }
           />
           <PortfolioLine

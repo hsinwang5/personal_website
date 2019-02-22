@@ -128,6 +128,12 @@
   }
 }
 @include laptop-cutoff {
+  .introduction {
+    top: 6vh;
+  }
+  .introduction--transition {
+    top: 85%;
+  }
   .introduction-main-container {
     min-height: 1050px;
   }
@@ -136,6 +142,25 @@
     height: 15vw;
     max-width: 420px;
     max-height: 210px;
+  }
+}
+@include highdef-cutoff {
+  .introduction {
+    top: 15vh;
+    font-size: 2.5rem;
+    max-width: 700px;
+    height: 800px;
+  }
+  .introduction--transition {
+    top: 85%;
+    height: 14.5%;
+    min-height: 100px;
+    width: 80%;
+    max-width: 1920px;
+  }
+  .introduction__char3--transition {
+    font-size: 3rem;
+    margin-top: 5.5%;
   }
 }
 

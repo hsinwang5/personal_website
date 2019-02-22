@@ -247,7 +247,7 @@ h5 {
   text-align: center;
   padding: 60% 0;
   transform: scale(0);
-  font-size: 1rem; }
+  font-size: 1.1rem; }
 
 .portfolio-line__header--opacity {
   transform: scale(1);
@@ -264,7 +264,7 @@ h5 {
   box-shadow: 0 0 2px 3px #02f286;
   z-index: -1; }
   .portfolio-item:hover {
-    transform: scale(1.1); }
+    transform: scale(1.05); }
 
 .portfolio-item img {
   width: 100%;
@@ -286,8 +286,6 @@ h5 {
   color: #70ba07;
   color: white;
   z-index: 102;
-  padding: 10px;
-  margin-top: 2%;
   font-size: 1.5rem;
   overflow-x: hidden; }
 
@@ -295,7 +293,8 @@ h5 {
   text-align: center;
   margin: auto;
   width: 70vw;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  padding: 8% 2%; }
 
 .portfolio-screen {
   position: absolute;
@@ -306,6 +305,34 @@ h5 {
   height: 100vh;
   left: -35vw;
   overflow-x: hidden; }
+
+@media only screen and (max-width: 22rem) {
+  .portfolio-textbox {
+    font-size: 1.15rem; }
+  .portfolio-line__header {
+    font-size: 0.72rem; } }
+
+@media only screen and (min-width: 48rem) {
+  .portfolio-textbox__text {
+    font-size: 2.1rem;
+    padding: 12% 2%; }
+  .portfolio-line__header {
+    font-size: 1.17rem; } }
+
+@media only screen and (min-width: 80rem) {
+  .portfolio-textbox {
+    font-size: 2.5rem; }
+  .portfolio-textbox__text {
+    padding: 9% 10%; }
+  .portfolio-line__header {
+    font-size: 2rem; } }
+
+@media only screen and (min-width: 120rem) {
+  .portfolio-textbox__text {
+    padding: 11% 8%;
+    font-size: 2.75rem; }
+  .portfolio-line__header {
+    font-size: 2.5rem; } }
 
 .animation__portfolioLineSlideInLeft {
   animation: portfolioLineSlideInLeft 0.5s ease-out;
@@ -378,9 +405,6 @@ h5 {
     transform: translate(150vw, 0) scale(0); }
   100% {
     transform: translate(0, 0) scale(1); } }
-
-.portfolio-line__circle {
-  top: 800px; }
 
 .introduction-main-container {
   width: 100vw;
@@ -498,6 +522,10 @@ h5 {
     max-height: 170px; } }
 
 @media only screen and (min-width: 80rem) {
+  .introduction {
+    top: 6vh; }
+  .introduction--transition {
+    top: 85%; }
   .introduction-main-container {
     min-height: 1050px; }
   .introduction__circle {
@@ -505,6 +533,22 @@ h5 {
     height: 15vw;
     max-width: 420px;
     max-height: 210px; } }
+
+@media only screen and (min-width: 120rem) {
+  .introduction {
+    top: 15vh;
+    font-size: 2.5rem;
+    max-width: 700px;
+    height: 800px; }
+  .introduction--transition {
+    top: 85%;
+    height: 14.5%;
+    min-height: 100px;
+    width: 80%;
+    max-width: 1920px; }
+  .introduction__char3--transition {
+    font-size: 3rem;
+    margin-top: 5.5%; } }
 
 .animation__introduction-circle1 {
   animation: spinLeft 20s infinite linear;

@@ -3,7 +3,6 @@ import classnames from "classnames";
 
 function PortfolioThumbnail(props) {
   let Style;
-  console.log(props.isMobile + " is mobile ornot");
   const top = props.isMobile
     ? window.innerHeight * 0.35
     : window.innerHeight * 0.4;

@@ -57,12 +57,10 @@ class PortfolioLine extends Component {
   //dynamically calculates the size of portfolio circles, call on render and window resize
   //done for pixel perfect rendering on wavy line
   calculateSize() {
-    console.log("calc size");
     //borderSize is the size of the circle's border plus 1 pixel
     const borderSize = 7;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
     width = width > 225 ? 225 : width;
-    console.log(width);
     this.setState(
       {
         width,
@@ -70,7 +68,6 @@ class PortfolioLine extends Component {
       },
       () => {
         const height = Math.round(this.myRef.current.offsetWidth * 2.115);
-        console.log(this.myRef.current.offsetWidth);
         this.setState(
           {
             height,
@@ -97,7 +94,6 @@ class PortfolioLine extends Component {
     });
   }
   onEnter({ previousPosition, currentPosition }) {
-    console.log(window.pageYOffset);
     if (previousPosition === "below") {
       if (this.props.direction === "left") {
         this.setState({

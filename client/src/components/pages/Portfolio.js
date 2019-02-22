@@ -31,12 +31,13 @@ class Portfolio extends Component {
   render() {
     //Calculates height of entire portfolio for element stacking purposes
     //since portfolio makes use of absolute and relative positioning
-    //height is height of all 6 portfolio items times 6
+    //height is height of portfolio item times number of portoflio items
+    const numberOfPortfolioLines = 8;
     let width = Math.round(window.innerWidth * 0.3 * 0.69);
     width = width > 225 ? 225 : width;
     const height = Math.round(width * 2.115);
     const Style = {
-      height: height * 6
+      height: height * numberOfPortfolioLines
     };
 
     return (
@@ -112,6 +113,30 @@ class Portfolio extends Component {
             viewportTop={this.state.viewportTop}
             description={
               "A basic CRUD site allowing users to add and view campgrounds, as well as create basic user accounts."
+            }
+          />
+          <PortfolioLine
+            picture="images/scheduler.png"
+            direction="left"
+            place={6}
+            text={"MMO Raid Scheduler"}
+            clicked={this.state.clicked}
+            handleClick={this.onClick}
+            viewportTop={this.state.viewportTop}
+            description={
+              "A full stack app allowing guilds to register a group, and allow individual members to join the group and sign up for events/declare their times available. Still in development."
+            }
+          />
+          <PortfolioLine
+            picture="images/unity.png"
+            direction="right"
+            place={7}
+            text={"Unity Adventure Game"}
+            clicked={this.state.clicked}
+            handleClick={this.onClick}
+            viewportTop={this.state.viewportTop}
+            description={
+              "A 3-d adventure game made with free graphical assets. Basic prototype set up in a week, and was made primarily to get comfortable with Unity's api and general processes."
             }
           />
         </div>
